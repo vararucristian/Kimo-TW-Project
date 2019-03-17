@@ -7,7 +7,6 @@ body{
 img{
     max-width: 100%;
 }
-
 main{
     display: grid;
     padding-left:5%;
@@ -35,6 +34,14 @@ main div:nth-child(even){
     grid-column-end:3;
     
 }
+#add1{display: none;}
+#add:active + #add1{
+    display:grid;
+}
+#add:active{
+    display: none;
+}
+
 main a{
     text-decoration: none;
 
@@ -84,13 +91,14 @@ footer #facebook{
     
 }
 footer #facebook img{
+    margin-top:15%;
     grid-column-start: 2;
-    border-radius: 50px;
+    border-radius: 5px;
 }
 footer #email{
     margin-left:40%;
     display: grid;
-    grid-template-columns: 10% 50%;
+    grid-template-columns: 11% 50%;
     align-items: center;
 
 }
@@ -107,6 +115,10 @@ footer div a{
 
 footer #facebook a{
     text-decoration: none;
+}
+nav nav ul{
+    position: relative;
+    display: none;
 }
 nav{
     width:100%; 
@@ -181,18 +193,18 @@ nav ul ul {
     width:100%;
     grid-column: 4/5;
 }
-nav ul ul li {
+    nav ul ul li {
 
-	border-top: 1px solid #6b727c;
-    border-bottom: 1px solid #575f6a;
-    position: relative;
-    min-height: 40px;
-    text-align: center;
-    font-family: inherit;
-    font-weight: bold;
-    color:black;
-    text-decoration: none;
-}
+        border-top: 1px solid #6b727c;
+        border-bottom: 1px solid #575f6a;
+        position: relative;
+        min-height: 40px;
+        text-align: center;
+        font-family: inherit;
+        font-weight: bold;
+        color:black;
+        text-decoration: none;
+    }
 nav ul ul li:hover{
     position: relative;
     background-color: #336699   ;
@@ -206,4 +218,121 @@ nav ul ul li:hover{
 nav ul li img{
     width: 70%;
     border-radius: 50%;
+}
+@media screen and (max-width: 760px){
+    nav ul{
+        display:none;
+    
+    }
+    nav nav ul{
+        position: relative;
+        display: grid;
+        grid-template-columns: 10% 50% 10% 30%;
+    }
+    #menu:hover>#menu2{
+        display: block;
+    }
+    #meniu>#menu2:hover{
+        display: block;
+    }
+    #menu:active>#menu2{
+        display: block;
+    }
+    #meniu>#menu2:active{
+        display: block;
+    }
+    #menu2 ul{
+        display:none;
+    }
+    #menu2 li:nth-of-type(2):hover+ul{
+        display: block;
+    } 
+    #menu2 li:nth-of-type(2):active+ul{
+        display: block;
+    } 
+    #menu2{
+        margin:0;
+        width:300%;
+        display: none;
+        position:absolute;
+    }
+    nav nav ul li:nth-of-type(2){
+        grid-column-start:3;
+    }
+    nav nav ul li:nth-of-type(3){
+        grid-column-start:4;
+    }
+    nav nav ul li:nth-of-type(3):hover{
+        background-color:#336699;
+    }
+    
+    main{
+        display: grid;
+        grid-template-columns: 100%;
+        padding-top:50px;
+        padding-bottom:50px;
+        background-color:rgba(0, 0, 0, 0.7); 
+        padding-left:15%;
+        padding-right:15%;
+        
+    }
+    main a:nth-of-type(2){
+        margin-top:0;
+    }
+    main a{
+        margin-bottom: 5px;
+    }
+    main a div{
+        border-radius:25px;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 40% 60%;
+        margin-bottom:10px;
+        text-align: center;
+        background-color: #8cb3d9;
+        font-family: inherit;
+        font-weight: bold;
+        font-size:15px;
+        color:black;
+        
+    }
+    footer #email{
+        margin-left:30%;;
+        display: grid;
+        grid-template-columns: 8% 50%;
+        align-items: center;
+        margin-top:1%;
+    }
+    footer #facebook{
+        margin-left:30%;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 7% 55%;
+      
+        
+    }
+    footer #facebook img{
+        margin-top:25%;
+        grid-column-start: 1;
+        border-radius: 5px;
+    }    
+    footer{
+        display: grid;
+        grid-template-columns: 100%; 
+        align-items: center;
+        text-align: left;
+        background-color: #8cb3d9;
+    
+    }
+}
+@media screen and (max-width: 420px){
+
+main{
+    padding-top:50px;
+    padding-bottom:50px;
+    padding-left:5%;
+    padding-right:5%;
+}
+
+
 }
