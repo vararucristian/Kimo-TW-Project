@@ -71,13 +71,23 @@ a div{
 }
 
 .actions{
+    padding:10%;
     grid-column-start: 2;
     display: grid;
     background-color: white;
 }
 #datas img{
-    width: 5%;
+    width: 20%;
 }
+.actions div{
+    display:grid;
+    grid-template-columns: 20% 80%;
+    align-content: center;
+    align-items: center;
+    font-weight: bold;
+    
+}
+
 footer{
     display: grid;
     grid-template-columns: 50% 50%; 
