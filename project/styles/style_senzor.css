@@ -1,0 +1,84 @@
+body{
+    margin:0;
+    background-image:url("images/mi-pham-223464-unsplash.jpg");
+    background-size: cover;
+    
+
+}
+main{
+    display: grid;
+    grid-template-columns: 35% 30% 35%;
+    background-color: rgba(0, 0, 0, 0.3 );
+    width:100%;
+}
+
+form{
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.719);
+    margin-top:50px;
+    margin-bottom:66px;
+    grid-column-start:2;
+    padding: 5px;
+    border:1px solid black; 
+    text-align: center;
+    background-color: #336699;
+    
+}
+#end{
+    background-color: #DEB40A;
+    border:none;    
+    color:black;
+    padding:5px 5px 5px 5px;
+    border-radius: 5px;
+}
+#end:hover{
+    background-color: rgb(167, 135, 10);
+}
+#kid_id{
+    padding-top:25px;
+    margin-left:10%;
+    margin-right:10%;
+         
+    display: grid;
+    grid-template-columns: 8% 82%;
+    border-bottom:1px solid black;
+}
+#kid_id img{
+    width:100%;
+    grid-column-start: 1;
+}
+input[type=text]{
+    background: transparent;
+    border:none;
+    text-align:center;
+}
+form p{
+    font-size: 25px;
+    margin-left:25%;
+    margin-right:25%;
+    border-bottom: 5px solid black;
+
+}
+#location{
+    padding-top:15px;
+    margin-left:10%;
+    margin-right:10%;
+    display:grid;
+    grid-template-columns: 8% 41% 41%;
+}
+#location img{
+    width:100%;
+}
+#condition div{
+    margin-top:20px;
+    border-bottom:1px solid black;
+    display: grid;
+    grid-template-columns: 80% 20%;
+    font-family: inherit;
+    font-size: 20px;
+}
+
+#condition {
+    margin-left:20%;
+    margin-right:30%;
+    
+}
