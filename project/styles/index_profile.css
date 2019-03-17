@@ -17,7 +17,8 @@ img{
 
 main{
     display: grid;
-    padding-left:5%;
+    padding-left:10%;
+    padding-right:10%;
     grid-template-columns: 20% 80%;
     padding-top:50px;
     background-color:rgba(0, 0, 0, 0.7); 
@@ -47,7 +48,22 @@ main{
 .kids div:hover{
     background-color:#4b545f;
 }
-
+a{
+    text-decoration: none;
+}
+a div{
+    display: grid;
+    grid-template-columns: 40% 60%;
+    align-items: center;
+    color:black;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family: inherit;
+    max-width: 100%;
+    margin: 3%;
+    margin-left: 10%;
+}
 #Kidimage
 {
     max-width: 100%;
@@ -56,6 +72,11 @@ main{
 
 .actions{
     grid-column-start: 2;
+    display: grid;
+    background-color: white;
+}
+#datas img{
+    width: 5%;
 }
 footer{
     display: grid;
