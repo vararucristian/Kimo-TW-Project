@@ -266,6 +266,7 @@ nav ul li img{
     }
     
     main{
+        min-height: 650px;
         display: grid;
         grid-template-columns: 100%;
         padding-top:50px;
