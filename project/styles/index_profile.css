@@ -16,12 +16,14 @@ img{
 }
 
 main{
+    margin-top:0;
     display: grid;
     padding-left:10%;
     padding-right:10%;
     grid-template-columns: 20% 80%;
-    padding-top:50px;
+    padding-top:0px;
     background-color:rgba(0, 0, 0, 0.7); 
+    min-height: 650px;
  
 
 }
@@ -29,8 +31,6 @@ main{
 
 .kids{
     background-color: #336699ad;
-    padding-top: 20%;
-    padding-bottom: 20%;
     display: grid;
     align-content: center;
 }
@@ -38,7 +38,6 @@ main{
     text-decoration: none;
     font-size: 100%;
     color:black;
-    align-content: center;
     text-align: center;
     font-weight: bold;
     max-width: 100%;
@@ -334,3 +333,146 @@ nav ul li img{
     width: 70%;
     border-radius: 50%;
 }
+nav ul ul {
+    display:none;
+    background: #8cb3d9;
+    border-radius:0%;
+    margin:0%;
+    padding: 0%;
+    position: absolute; 
+    top: 100%;
+    width:100%;
+    grid-column: 4/5;
+}
+    nav ul ul li {
+
+        border-top: 1px solid #6b727c;
+        border-bottom: 1px solid #575f6a;
+        position: relative;
+        min-height: 40px;
+        text-align: center;
+        font-family: inherit;
+        font-weight: bold;
+        color:black;
+        text-decoration: none;
+    }
+nav ul ul li:hover{
+    position: relative;
+    background-color: #336699   ;
+}
+nav nav ul{
+    position: relative;
+    display: none;
+}
+
+@media screen and (max-width: 760px){
+    nav ul{
+        display:none;
+    
+    }
+    nav nav ul{
+        position: relative;
+        display: grid;
+        grid-template-columns: 10% 50% 10% 30%;
+    }
+    #menu:hover>#menu2{
+        display: block;
+    }
+    #meniu>#menu2:hover{
+        display: block;
+    }
+    #menu:active>#menu2{
+        display: block;
+    }
+    #meniu>#menu2:active{
+        display: block;
+    }
+    #menu2 ul{
+        display:none;
+    }
+    #menu2 li:nth-of-type(2):hover+ul{
+        display: block;
+    } 
+    #menu2 li:nth-of-type(2):active+ul{
+        display: block;
+    } 
+    #menu2{
+        margin:0;
+        width:300%;
+        display: none;
+        position:absolute;
+    }
+    nav nav ul li:nth-of-type(2){
+        grid-column-start:3;
+    }
+    nav nav ul li:nth-of-type(3){
+        grid-column-start:4;
+    }
+    nav nav ul li:nth-of-type(3):hover{
+        background-color:#336699;
+    }
+    
+    footer #email{
+        margin-left:30%;;
+        display: grid;
+        grid-template-columns: 8% 50%;
+        align-items: center;
+        margin-top:1%;
+    }
+    footer #facebook{
+        margin-left:30%;
+        align-items: center;
+        display: grid;
+        grid-template-columns: 7% 55%;
+      
+        
+    }
+    footer #facebook img{
+        margin-top:25%;
+        grid-column-start: 1;
+        border-radius: 5px;
+    }    
+    footer{
+        display: grid;
+        grid-template-columns: 100%; 
+        align-items: center;
+        text-align: left;
+        background-color: #8cb3d9;
+    
+    }
+    #datas img{
+        width: 30%;
+    }
+    main{
+        grid-template-columns: 40% 60%;
+        min-height: 800px;}
+        
+.kids{  
+    padding-top:50px;
+    
+ align-content: space-between;
+}
+
+    }
+@media screen and (max-width: 420px){
+.kids{  
+    padding-top:50px;
+    padding-bottom: 0;    
+ align-content: space-between;
+}
+
+main{
+    grid-template-columns: 40% 60%;
+    padding-top:0px;
+    padding-bottom:50px;
+    padding-left:0%;
+    padding-right:0%;
+    margin-bottom: 0px;
+    min-height: 800 px
+}
+
+
+}
+
+
+
