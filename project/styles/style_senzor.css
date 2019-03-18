@@ -82,3 +82,56 @@ form p{
     margin-right:30%;
     
 }
+
+@media screen and (max-width:1100px){
+    main{
+        display: grid;
+        grid-template-columns: 30% 40% 30%;
+        background-color: rgba(0, 0, 0, 0.3 );
+        width:100%;
+    }
+
+
+}
+@media screen and (max-width:920px){
+    main{
+        display: grid;
+        grid-template-columns: 25% 50% 25%;
+        background-color: rgba(0, 0, 0, 0.3 );
+        width:100%;
+    }
+
+    
+}
+@media screen and (max-width:740px){
+    main{
+        display: grid;
+        grid-template-columns: 20% 60% 20%;
+        background-color: rgba(0, 0, 0, 0.3 );
+        width:100%;
+    }
+
+    
+}
+@media screen and (max-width:612px){
+    main{
+        display: grid;
+        grid-template-columns: 15% 70% 15%;
+        background-color: rgba(0, 0, 0, 0.3 );
+        width:100%;
+    }
+
+}
+@media screen and (max-width:524PX){
+    main{
+        display: block;
+        background-color: rgba(0, 0, 0, 0.3 );
+        width:100%;
+        margin:0;
+    }
+    form{
+        margin:0;
+        padding-bottom: 145px;
+    }
+
+}
