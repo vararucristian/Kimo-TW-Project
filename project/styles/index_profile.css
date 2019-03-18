@@ -163,14 +163,37 @@ form img{
 }
 #form2{
     display: grid;
-    margin: 5%;
+    margin: 10%;
     justify-items: center;
     align-items: center;
 }
-#item input{
-    width: 50%;
+#gen{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+#text .item{
+    display:grid;
+    grid-template-columns: 50% 50%;
+    
+}
+#addphoto{
+    display:grid;
+    grid-template: 100%;
+    text-align: center;
+}
+#addphoto input{
+    padding-left:25%;
+padding-right:25%;
+    
+}
+.item{
+    margin-bottom:25px;
+}
+.item input{
+    width: 100%;
     align-self: center;
 }
+
 
 footer{
     display: grid;

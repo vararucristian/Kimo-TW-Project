@@ -45,7 +45,7 @@
             <div><img id="Kidimage" src="images/clipart2755860.png"> kid name5</div>
         </a>
         <a href="">
-            <div id="add"><a href="#modal2" class="modal-trigger"><img id="Kidimage" src="images/add.png">Add kid</a></div>
+          <a href="#modal2" class="modal-trigger"><div id="add"><img id="Kidimage" src="images/add.png">Add kid</div></a> 
         </a>
         </div>
         <div class="actions">
@@ -73,7 +73,7 @@
 
         <div id="email">
             <img src="images/windows8mailapp.jpg"><a href="https://www..com/stefania.andries">stefania.andries</a>
-            <img src="images/windows8mailapp.jpg"> <a href="https://www.facebook.com/anamaria.turcu.90">anamaria.turcu.90</a>
+            <img src="images/windows8mailapp.jpg"> <a href="mailto:turcu.anamaria98@gmail.com">turcu.anamaria98</a>
             <img src="images/windows8mailapp.jpg"> <a href="mailto:vararu.cristian@yahoo.com">vararu.cristian98</a>
 
         </div>
@@ -120,32 +120,30 @@
             </header>
             <div class="modal__body">
               <p class="modal__text">
-                <div id="form2">
-                    <div id="item">
-                    Kid's name:<br> 
+                <form id="form2">
+                    <div id="text">
+                    <div class="item">
+                    Kid's name:
                     <input type="text" name="name" value="FirstName LastName">
-                    <br>
                     </div>
-                    <div id="item">
-                    Sensor's code:<br>
+                    <div class="item">
+                    Sensor's code:
                     <input type="text" name="code" value="Code">
-                    <br> 
+           
                     </div>
-                    <div id="item">
-                        <br>
-                    Gender:<br> 
-                    <input type="checkbox" id="gender">
-                        <label for="girl">Girl</label>
-                    <input type="checkbox" id="gender">
-                        <label for="boy">Boy</label>
+                  </div>
+
+                    <div class="item">              
+                    Gender:
+                    <div id="gen">
+                    <input type="radio" id="gender" value="Girl">Girl
+                    <input type="radio" id="gender" value="Boy">Boy</div>
                     </div>
-                    <div id="item">
-                    <br><br>
-                    Add a photo with your child: <br>
+                    <div id="addphoto">
+                    Add a photo with your child: 
                     <input type="file" name="photo" value="images/pen">
-                    <br>
                     </div>
-                </div> 
+                  </form> 
               </div>
             <footer class="modal__footer">
             </footer>
