@@ -22,10 +22,8 @@ main{
     grid-template-columns: 20% 80%;
     padding-top:50px;
     background-color:rgba(0, 0, 0, 0.7); 
- 
-
+    min-height: 600px;
 }
-
 
 .kids{
     background-color: #336699ad;

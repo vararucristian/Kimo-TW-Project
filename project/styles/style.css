@@ -16,6 +16,7 @@ main{
     background-color:rgba(0, 0, 0, 0.7); 
     padding-left:15%;
     padding-right:15%;
+    min-height: 600px;
     
 }
 main div:nth-child(odd){
