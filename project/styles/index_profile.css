@@ -88,9 +88,7 @@ a div{
     align-items: center;
     font-weight: bold;
 }
-label{
-    display: inline-block;
-}
+
 .modal2:target{
     display: table;
 }
