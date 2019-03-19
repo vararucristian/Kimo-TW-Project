@@ -1,0 +1,147 @@
+body{
+    background-image:url("images/oCvsFYI.jpg");
+    margin:0;
+    
+}
+
+main{
+    background-color:rgba(0, 0, 0, 0.7); 
+    height: 100vh;
+    display: grid;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows: 1fr 5fr;
+    grid-auto-rows: minmax(100px, auto);
+}
+
+#Logo{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#Mesaj{
+    grid-column: 2;
+    grid-row: 2/5;
+}
+
+#Login{
+    grid-column: 1/2;
+    grid-row: 1/5;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#KIMO{
+    text-align: center;
+    font-size: 2.5rem;
+    color: #009CEA;
+    text-shadow:  1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+} 
+
+#Logo img{
+    display: block;
+    margin-top: 5%;
+    margin-left: auto;
+    margin-right: auto;
+    width: 20%;
+    border-radius: 50%;
+}
+
+form{
+    margin-top: 15%;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 2em;
+}
+
+
+.loginBox{
+    margin-left: 15%;
+    align-content: center;
+    display: grid;
+    grid-template-columns: 8% 82%;
+    width: 100%;
+    border-bottom: 2px solid #009CEA;
+}
+
+.loginBox img{
+    width:100%;
+    grid-column-start: 1;
+}
+
+.loginBox input{
+    text-align: center;
+    border: none;
+    outline: none;
+    background: none;
+    color: #009CEA;
+    font-size: 1em;
+}
+
+
+#butonLogin{
+    width: 100%;
+    background-color:#009CEA;
+    border: none;
+    color:black;
+    font-size: 1em;
+    margin-left: 15%;
+    align-content: center;
+    border-radius: 10px;
+}
+
+#butonLogin:hover{
+    background-color: #0f2c58;
+}
+
+#SignUp{
+    margin-left: 15%;
+    text-align: center;
+    color: #009CEA;
+    font-size: 2rem;
+}
+
+a:link{
+    color: #009CEA;
+}
+
+a:visited{
+    color: #009CEA;
+}
+
+#Mesaj{
+    padding-top: 10%;
+    text-align: center;
+    font-size: 5em;
+    color: #009CEA;
+    font-family: Times;
+}
+/* header{
+    width:100%; 
+    margin:0em;
+    position: fixed;
+    background-color: transparent;
+    height: 20%;
+}
+
+header ul{
+    margin: 0%;
+    list-style: none;
+    display: grid;
+    min-height:40px;
+    position: relative;
+    grid-template-columns: 1fr 1fr 1fr;
+   
+}
+
+header ul li:first-of-type{
+    align-content: center;
+    grid-area: 1 / 2 / 1 / 2;
+}
+
+header ul li:nth-of-type(2){
+    align-self: center;
+    grid-area: 2 / 2 / 2 / 2;
+} */
+
