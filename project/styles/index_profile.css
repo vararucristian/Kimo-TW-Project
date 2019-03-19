@@ -440,7 +440,9 @@ nav nav ul{
     }
     main{
         grid-template-columns: 40% 60%;
-        min-height: 800px;}
+        min-height: 800px;
+         padding-bottom: 0%;
+}
         
 .kids{  
     padding-top:50px;
