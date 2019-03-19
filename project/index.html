@@ -67,25 +67,8 @@
         <a href="">
             <div><img src="images/clipart2755860.png"> kid name5</div>
         </a>
-        <a href="index.html">
+        <a href="#modal2" class="modal-trigger">
             <div id="add"><img src="images/add.png"></div>
-            <div id="add1">
-                <form>
-                    <label for="image">Image:</label>
-                    <input type="file" name="image" id="image" /><br />
-                    <input type="submit" name="submit" value="Submit" />
-                </form>
-                <form>
-                    Prenume Copil<br>
-                    <input type="text" name="firstname">
-                    <br>Nume Copil
-                    <br><input type="text" name="lastname">
-                    <br>Cod Senzor
-                    <br><input type="text" name="cod">
-                    <br><input type="submit" name="submit" value="Submit" />
-
-                </form>
-            </div>
         </a>
     </main>
     <footer>
@@ -102,13 +85,52 @@
         </div>
 
         <div id="email">
-            <img src="images/windows8mailapp.jpg"><a href="https://www..com/stefania.andries">stefania.andries</a>
+            <img src="images/windows8mailapp.jpg"><a href="mailto:stefania.andries@yahoo.com">stefania.andries</a>
             <img src="images/windows8mailapp.jpg">
-            <a href="https://www.facebook.com/anamaria.turcu.90">anamaria.turcu.90</a>
+            <a href="mailto:turcu.anamaria98@gmail.com">turcu.anamaria98</a>
             <img src="images/windows8mailapp.jpg"> <a href="mailto:vararu.cristian@yahoo.com">vararu.cristian98</a>
 
         </div>
     </footer>
+    <div class="modal2" id="modal2">
+        <div class="modal__dialog">
+          <section class="modal__content">
+            <header class="modal__header">
+              <h2 class="modal__title">Add kid</h2>
+              <a href="#" class="modal__close">Add</a>
+            </header>
+            <div class="modal__body">
+              <p class="modal__text">
+                <form id="form2">
+                    <div id="text">
+                    <div class="item">
+                    Kid's name:
+                    <input type="text" name="name" value="FirstName LastName">
+                    </div>
+                    <div class="item">
+                    Sensor's code:
+                    <input type="text" name="code" value="Code">
+           
+                    </div>
+                  </div>
+
+                    <div class="item">              
+                    Gender:
+                    <div id="gen">
+                    <input type="radio" id="gender" value="Girl" name="kidgen">Girl
+                    <input type="radio" id="gender" value="Boy" name="kidgen">Boy</div>
+                    </div>
+                    <div id="addphoto">
+                    Add a photo with your child: 
+                    <input type="file" name="photo" value="images/pen">
+                    </div>
+                  </form> 
+              </div>
+            <footer class="modal__footer">
+            </footer>
+          </section>
+        </div>
+      </div>
 </body>
 
 </html>
