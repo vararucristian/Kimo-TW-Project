@@ -1,7 +1,6 @@
 body{
     background-image:url("images/oCvsFYI.jpg");
     margin:0;
-    
 }
 
 main{
@@ -30,6 +29,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-right: 2%;
 }
 
 #KIMO{
@@ -115,33 +115,54 @@ a:visited{
     text-align: center;
     font-size: 5em;
     color: #009CEA;
-    font-family: Times;
-}
-/* header{
-    width:100%; 
-    margin:0em;
-    position: fixed;
-    background-color: transparent;
-    height: 20%;
+    font-family: 'Robot';
+    
 }
 
-header ul{
-    margin: 0%;
-    list-style: none;
-    display: grid;
-    min-height:40px;
-    position: relative;
-    grid-template-columns: 1fr 1fr 1fr;
-   
+
+@media screen and (max-width: 1125px){
+   form{
+       margin-top: 30%;
+   }
+   .loginBox{
+       width: 85%;
+   }
+   #butonLogin{
+       width: 85%;
+   }
+   #Mesaj{
+       font-size: 3.5em;
+       margin-left: 5%;
+   }
+   #Logo img{
+       margin-top: 25%;
+   }
+   #SignUp{
+       grid-row-gap: 1em;
+   }
 }
 
-header ul li:first-of-type{
-    align-content: center;
-    grid-area: 1 / 2 / 1 / 2;
+@media screen and (max-width: 670px){
+    #Mesaj{
+        visibility: hidden;
+    }
+    main{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 110vh;
+    }
+    #Mesaj{
+        order: -1;
+        height: 0em;
+    }
+    #Logo{
+        
+        width: 100%;
+    }
+    #Logo img{
+        margin-top: 0%;
+    }
+
 }
-
-header ul li:nth-of-type(2){
-    align-self: center;
-    grid-area: 2 / 2 / 2 / 2;
-} */
-
