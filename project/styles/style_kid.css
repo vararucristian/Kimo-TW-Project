@@ -83,31 +83,31 @@ main{
     
 }
 
+.person{
+    display: grid;
+    grid-template-columns: 100%;
+}
 
-.person:hover + ul{
+.person:hover >ul{
     display:block;
 }
 
-.person+ ul:hover{
+.person> ul:hover{
     display: block;
 }
-
-.act ul {
+.person ul {
+    position: absolute;
     display:none;
-    background: #8cb3d9;
-    border-radius:0%;
-    margin:0%;
-    padding: 0%;
-    position: absolute; 
-    top: 100%;
-    width:100%;
-    grid-column: 4/5;
+    padding:0;
+    width: 14%;
+    margin-top:260px;
+    background-color: #8cb3d9;
 }
-.act ul li {
+
+.person ul li {
 
 	border-top: 1px solid #6b727c;
     border-bottom: 1px solid #575f6a;
-    position: relative;
     min-height: 40px;
     text-align: center;
     font-family: inherit;
@@ -115,7 +115,16 @@ main{
     color:black;
     text-decoration: none;
 }
-.act ul li:hover{
-    position: relative;
+.person ul li:hover{
     background-color: #336699   ;
+}
+@media screen and (max-width: 760px){
+    .person ul {
+        width: 28%;
+    }
+}
+@media screen and (max-width: 420px){
+    .person ul {
+        width: 35%;
+    }
 }
