@@ -8,7 +8,7 @@ img{
     max-width: 100%;
 }
 
-#KIMO{
+.KIMO{
     font-family: inherit;
     font-size: 20px;
     font-weight: bold;
@@ -60,7 +60,7 @@ a div{
     margin: 3%;
     margin-left: 10%;
 }
-#Kidimage
+.Kidimage
 {
     max-width: 100%;
     height: 50px;
@@ -75,10 +75,10 @@ a div{
     display: grid;
     background-color: white;
 }
-#datas img{
+.datas img{
     width: 20%;
 }
-#datas a{
+.datas a{
     color: black;
 }
 .actions div{
@@ -172,7 +172,7 @@ form img{
 }
 #addphoto{
     display:grid;
-    grid-template: 100%;
+    grid-template-columns: 100%;
     text-align: center;
 }
 #addphoto input{
@@ -284,7 +284,7 @@ nav ul li:hover {
 nav ul li:hover a {
 	color: #fff;
 }
-nav ul li:hover + ul{
+nav ul li:hover ul{
     display:block;
 }
 
@@ -385,7 +385,10 @@ nav nav ul{
     #menu2 ul{
         display:none;
     }
-    #menu2 li:nth-of-type(2):hover+ul{
+    #menu2 li:nth-of-type(2):hover ul{
+        display: block;
+    } 
+    #menu2 li:nth-of-type(2) ul:hover{
         display: block;
     } 
     #menu2 li:nth-of-type(2):active+ul{
@@ -435,7 +438,7 @@ nav nav ul{
         background-color: #8cb3d9;
     
     }
-    #datas img{
+    .datas img{
         width: 30%;
     }
     main{
@@ -465,7 +468,7 @@ main{
     padding-left:0%;
     padding-right:0%;
     margin-bottom: 0px;
-    min-height: 800 px
+    min-height: 800px;
 }
 
 
