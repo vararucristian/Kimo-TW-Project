@@ -5,7 +5,7 @@ body{
 
 main{
     background-color:rgba(0, 0, 0, 0.7); 
-    height: 100vh;
+    max-height: 100vh;
     display: grid;
     grid-template-columns:1fr 1fr;
     grid-template-rows: 1fr 5fr;
@@ -39,10 +39,6 @@ main{
     text-shadow:  1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
 } 
 
-#KIMO:hover{
-    transform: scale(1.1);
-}
-
 #Logo img{
     display: block;
     margin-top: 5%;
@@ -50,6 +46,10 @@ main{
     margin-right: auto;
     width: 20%;
     border-radius: 50%;
+}
+
+#Logo img:hover{
+    transform: scale(1.1);
 }
 
 form{
@@ -144,6 +144,21 @@ a:visited{
    #SignUp{
        grid-row-gap: 1em;
    }
+   main{
+       min-height: 140vh;
+   }
+}
+
+@media screen and (max-width: 1367px) and (min-height: 1023px){
+    main{
+        min-height: 110vh;
+    }
+    form{
+        margin-top: 50%;
+    }
+    #Login{
+        justify-content: flex-start;
+    }
 }
 
 @media screen and (max-width: 670px){
@@ -155,7 +170,7 @@ a:visited{
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 110vh;
+        max-height: 220vh;
     }
     #Mesaj{
         order: -1;
@@ -169,4 +184,16 @@ a:visited{
         margin-top: 0%;
     }
 
+}
+
+@media screen and (max-width: 380px){
+    main{
+       min-height: 100vh;
+    }
+}
+
+@media screen and (max-width: 380px) and (min-height: 811px){
+    main{
+       min-height: 90vh;
+    }
 }

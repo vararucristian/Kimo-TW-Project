@@ -16,11 +16,12 @@ form{
     grid-column: 2/3;
     box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.719);
     margin-top:50px;
-    margin-bottom:66px;
+    margin-bottom:50px;
     padding: 5px;
     border:1px solid black; 
     text-align: center;
     background-color: blueviolet;
+    border-radius: 8%;
 }
 
 
@@ -87,7 +88,7 @@ form{
 }
 
 #butonSignUp{
-    margin-top: 5%;
+    margin-top: 2%;
     width: 30%;
     background-color:#009CEA;
     border: none;
@@ -99,6 +100,11 @@ form{
 
 #butonSignUp:hover{
     background-color: #0f2c58;
+}
+
+#gen{
+    margin-top: 2%;
+    font-size: 1.5em;
 }
 
 @media screen and (max-width: 960px){
@@ -115,6 +121,9 @@ form{
     .SignUpBox input{
         border-bottom: 1px solid black;
     }
+    #gen{
+        font-size: 1em;
+    }
 }
 
 @media screen and (max-width: 604px){
@@ -129,3 +138,4 @@ form{
         visibility: hidden;
     }
 }
+
