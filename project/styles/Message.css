@@ -71,7 +71,7 @@ nav ul li:first-of-type:hover{
     background-color: #336699
 
 }
-#KIMO{
+.KIMO{
     font-family: inherit;
     font-size: 20px;
     font-weight: bold;
@@ -137,7 +137,7 @@ nav ul ul li {
 
 nav ul ul li:hover{
     position: relative;
-    background-color: #336699   ;
+    background-color: #336699 ;
 }
 
 nav ul li img{
@@ -158,9 +158,9 @@ main{
 }
 
 #profil{
+    margin-top: 10vh;
     display: grid;
     grid-template-columns: 50% 50%;
-    background-color: blueviolet
 }
 
 #profil img{
@@ -174,10 +174,63 @@ main{
     align-items: center;
 }
 
-#chat{
-    background-color: chartreuse;
+#profil div p{
+    align-self: center;
+    font-size: 2em;
+    border-bottom: 2px solid #009CEA;
+    color: #009CEA;
 }
 
+#profil div p:hover{
+    transform: scale(1.1);
+}
+
+
+
+form{
+    width: 100%;
+    background-color: #336699;
+    border-radius: 2%;
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.719);
+}
+
+form h1{
+    text-align: center;
+    margin-top: 1em;
+    padding-top: 2%;
+}
+
+form textarea{
+    width: 80%;
+    padding: 1em;
+    margin: 0 1em 1em 2em;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 30vh;
+    border-radius: 1%;
+}
+
+form div{
+    display: flex;
+    flex-direction: row;
+}
+
+form button{
+    margin-right: 2%;
+    width: 15%;
+    background-color: #000000;
+    border: none;
+    color:#336699;
+    font-size: 1.5em;
+    border-radius: 5px;
+    align-self: center;
+    box-shadow: 5px 5px 3px 3px rgba(0, 0, 0, 0.719);
+}
+
+form button:hover{
+    color: red;
+}
 
 @media screen and (max-width: 760px){
     nav ul{
@@ -293,5 +346,39 @@ main{
         padding-bottom:50px;
         padding-left:5%;
         padding-right:5%;
+    }
+}
+
+@media screen and (max-width: 900px)
+{
+    #profil div{
+        margin-left: 25%;
+    }
+    #profil div p{
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (max-width: 625px){
+    #profil{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    form button{
+        font-size: 1em;
+    }
+    #profil img{
+        margin-left: 5%;
+    }
+    #profil div{
+        margin-left: 0;
+    }
+}
+
+@media screen and (max-width: 325px)
+{
+    form button{
+        font-size: 0.8em;
     }
 }
