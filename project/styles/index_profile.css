@@ -8,6 +8,10 @@ img{
     max-width: 100%;
 }
 
+nav ul:hover ul li a{
+color:red;
+font-size:16px;
+}
 .KIMO{
     font-family: inherit;
     font-size: 20px;
@@ -321,6 +325,7 @@ nav ul ul {
     width:100%;
     grid-column: 4/5;
 }
+
 nav ul ul li  {
 
 	border-top: 1px solid #6b727c;
