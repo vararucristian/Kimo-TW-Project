@@ -56,28 +56,27 @@
   </nav>
   <main>
     <div class="act">
-      <a href="#">
         <div class="person"> People of interest
           <ul>
             <li>Person 1</li>
             <li>Person 2</li>
             <li>Person 3</li>
             <li>Person 4</li>
-            <li>Add new person</li>
+            <li><a href="#modal" class="modal-trigger">Add new person</a></li>
           </ul>
         </div>
-      </a>
-      <a href="">
+    
+      
         <div class="person">Interactions with other kids
           <ul>
-            <li>kid 1</li>
-            <li>kid 2</li>
-            <li>kid 3</li>
-            <li>kid 4</li>
+            <li><a href="Message.html"> Friend 1</a></li>
+            <li><a href="Message.html"> Friend 2</a></li>
+            <li><a href="Message.html"> Friend 3</a></li>
+            <li><a href="Message.html"> Friend 4</a></li>
            
           </ul>
         </div>
-      </a>
+      
       <a href="#modal2" class="modal-trigger">
         <div id="addph"><img id="Kidimage" src="images/add.png" alt="kid">Change the profile image </div>
       </a>
@@ -112,7 +111,7 @@
     <div class="modal__dialog">
       <section class="modal__content">
         <header class="modal__header">
-          <h2 class="modal__title">Change the profile image of your child </h2>
+          <h2 class="modal__title">Change the image</h2>
           <a href="#" class="modal__close">Save</a>
         </header>
         <div class="modal__body">
@@ -132,6 +131,32 @@
       </section>
     </div>
   </div>
+    <div class="modal" id="modal">
+      <div class="modal__dialog">
+        <section class="modal__content">
+          <header class="modal__header">
+            <h2 class="modal__title">Add a new person of interest</h2>
+            <a href="#" class="modal__close">Save</a>
+          </header>
+          <div class="modal__body">
+            <p class="modal__text">
+              <form>
+                Firstname and Lastname
+                <input type="text" name="name" value="FirstName LastName">
+                <img src="images/descărcare(2).png" alt="location">
+                Latitude:
+                <input type="text" name="latitude" value="45.943161">
+                Longitude:
+                <input type="text" name="longitudine" value="24.966761">
+                
+  
+              </form>
+          </div>
+          <footer class="modal__footer">
+          </footer>
+        </section>
+      </div>
+    </div>
 </body>
 
 </html>

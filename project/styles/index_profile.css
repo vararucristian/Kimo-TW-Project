@@ -88,6 +88,24 @@ a div{
     align-items: center;
     font-weight: bold;
 }
+.modal3:target{
+    display: table;
+}
+.modal3{
+    display:none;
+    background:rgba(0, 0, 0, .8);
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+  }
+.modal3 .modal__header{
+    background:red;
+    color:rgba(255, 255, 255, 0.8);
+    padding:1rem;
+    position:relative;
+  }
 
 .modal2:target{
     display: table;
@@ -303,7 +321,7 @@ nav ul ul {
     width:100%;
     grid-column: 4/5;
 }
-nav ul ul li {
+nav ul ul li  {
 
 	border-top: 1px solid #6b727c;
     border-bottom: 1px solid #575f6a;
