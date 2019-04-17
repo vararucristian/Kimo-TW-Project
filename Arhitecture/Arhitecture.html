@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="utf-8">
+    <title>Kimo</title>
+</head>
+
+<body>
+    <h1>Kimo-Application</h1>
+    <div>
+        <h4>Andrieş Ştefania
+            <br>Turcu Ana-Maria
+            <br>Vararu Cristian</h4>
+
+    </div>
+    <section>
+        <h4>1. Introducere</h4>
+        <p>
+            Aplicația Kimo are ca scop siguranța copiilor, oferind părinților suport pentru monitorizarea acestora. Sunt
+            vizate atât aspecte privind locația, cât și împrejurările în care se află copilul. De asemenea aplicația
+            oferă suport pentru a comunica cu alți părinți utilizatori.
+        </p>
+    </section>
+    <section>
+        <h4>2. Diagrama Use-Case</h4>
+        <P>
+            <b>Actori</b><br>
+            <BR>• Utilizatorii umani
+            <BR>Aplicația este destinată persoanelor cu unul sau mai mulți copii având
+            utilitatea de a verifica în timp
+            real locatia acestora. Părintele poate adăuga copii pe care să ii monitorizeze prin intermediul aplicației,
+            dar
+            și alte persoane de interes pentru același copil. Mai există posibilitatea de a trimite mesaje către alți
+            părinți sau primirii unor notificări în situații deosebite.
+            <BR>• Baza de date
+            <BR>Aici vor fi stocate informații legate atât de cont cât și de copii din aplicație.
+            <BR>Se vor realiza interogări ale bazei de date pentru logare, trimitere de mesaje, etc. Tot prin
+            intermediul ei
+            se vor realiza și modificările cum ar fi modificarea datelor personale ale contului, schimbarea fotografiei
+            unui copil, adăugarea unui nou copil etc. Notificările și mesajele vor fi și ele stocate în baza de date de
+            unde vor fi trimise către utilizator. Atunci când un nou cont teste creat cu success el va fi adăugat în
+            baza de date.
+        </P>
+        <br>
+        <div style="text-align: center;width: 100%;">
+            <img src="57097054_334479380606274_3915442089982164992_n.png " style="width: 80%;" alt="Picture 1">
+            <h6>Picture 1 Use-Case Diagram</h6>
+        </div>
+    </section>
+    <section>
+        <h4>
+            3. Funcționalitățile aplicație</h4>
+        <p> <b>3.1 Înregistrare:</b>
+            <br> Orice persoană ce dorește să folosească aplicația pentru a-și monitoriza
+            copilul
+            are posibilitatea de a se înregistra. Pentru crearea contului sunt necesare următoarele informații: nume
+            și prenume părintelui, un username neutilizat și o parolă alese de părinte, coordonatele adresei, număr
+            de telefon, email și gen.
+            <br><b>3.2 Logare:</b><br>
+            Un utilizator poate accesa funcționalitățile aplicației doar după autentificare.
+            Această
+            operațiune va verifica existența contului unic și a parolei aferente în baza de date. După logare
+            utilizatorul va fi direcționat către pagina de Home.
+            <br><b>3.3 Vizualizare copii:</b>
+            <br>Pe pagina de Home se va afișa lista copiilor înregistrați de pe un
+            cont.
+            Se
+            va
+            afișa imaginea de profil a copilului în cazul în care a fost setată, altfel o imagine implicită urmată
+            de numele acestuia.
+            <br><b>3.4 Adăugare copil:</b>
+            <br>Un părinte poate înregistra un copil pe care să îl
+            monitorizeze
+            prin
+            intermediul
+            aplicației. La adăugare se vor folosi doar numele și prenumele copilului, eventual o poză de profil și
+            codul senzorului ce va transmite locația lui în timp real.
+            <br><b>3.5 Vizualizare informații copil:</b><br> Aplicația va furniza o pagină de profil a fiecărui copil
+            supravegheat
+            ce va conține informații specific acestuia.
+            <br><b>3.6 Vizualizare poziție copil pe hartă:</b><br> Pe pagina de profil a unui copil se va furniza o
+            hartă ce
+            indică poziția actuală a acestuia.
+            <br><b>3.7 Adăugare persoană de interes:</b> <br>Un utilizator are posibilitatea de a adăuga adresa și
+            numele
+            unor
+            persoane de interes alături de care copilul se află în siguranță. Verificarea distanței minime dintre
+            odraslă și alte locații sigure va include și adresele acestor persoane.
+            <br><b>3.8 Vizualizare persoană de interes:</b><br> Lista persoanele de interes va putea fi vizualizată pe
+            pagina
+            fiecărui copil.
+            <br><b>3.9 Vizualizare prieteni:</b><br> Dacă pruncul intră în contact cu alți copii înregistrați în
+            aplicație
+            aceștia
+            vor fi adăugați automat în lista de prieteni a acestuia, listă ce se va găsi deasemenea pe pagina de
+            destinată lui.
+            <br><b>3.10 Schimbă fotografia copilului:</b><br> Imaginea de profil poate fi adăugată la înregistrarea
+            copiilor
+            sau
+            oricând altcândva. Există posibilitatea de schimbare sau înlăturare a acesteia.
+            <br><b>3.11 Vizualizare profil prieten al copilului:</b><br> Profilul unui prieten constă în poza de profil
+            a
+            cestuia
+            și numele părintelui ce deține contul de pe care a fost înregistrat prietenul.
+            <br><b>3.12 Trimite mesaj:</b><br> Un utilizator poate să trimită un mesaj către contul părintelui unui
+            prieten
+            al
+            copilului. Această funcționalitate poate fi găsită pe pagina de profil a prietenilor.
+            <br><b>3.13 Vizualizare date personale:</b><br> Pe pagina de My Account sunt afișate datele personale
+            introduse
+            la
+            crearea contului.
+            <br><b>3.14 Modificare date personale:</b> <br>Tot pe pagina de My Account există posibilitatea de
+            modificare a
+            datelor personale introduse la crearea contului.
+            <br><b>3.15 Vizualizare notificări pentru situații de urgență:</b><br> În cazul în care copilul se află
+            într-o
+            împrejurare periculoasă(s-a distanțat prea mult de persoanele de interes, sunt animale periculoase sau
+            un accident în apropiere, s-a lovit sau interacționează cu o persoană necunoscută) se vor emite
+            notificări specific către contul părintelui.
+            <br><b>3.16 Vizualizare notificări de mesaje:</b><br> Mesajele vor fi primite ca și notificări și vor apărea
+            alături
+            de cele menționate mai sus.
+            <br><b>3.17 Răspunde la mesaj:</b><br> Alături de vizualizarea unui mesaj există și opțiunea de răspundere,
+            selectarea
+            acesteia direcționând utilizatorul către pagina de profil a prietenului a cărui părinte a trimis acel
+            mesaj.
+            <br><b>3.18 Delogare:</b><br> La sfârșitul utilizării aplicației, utilizatorul se deconecteză revenind pe
+            pagina
+            de
+            logare.
+        </p>
+
+    </section>
+    <section>
+        <h4>4. Task-uri pe fiecare membru</h4>
+        <br>
+        <div style="text-align:center;"><img src="57360360_2301768866529724_415645704883535872_n.png"
+                style="width: 80%;" alt="task_table">
+            <h6>Picture 2 Task assign</h6>
+        </div>
+    </section>
+    <section>
+        <h4>5.Tehnologii folosite</h4>
+
+        <b>5.1 Server:</b>
+        <ul>
+            <li> Limbaj de Programare: PHP</li>
+            <li> Server Web: Apache</li>
+            <li> Server Bază de date: MySql</li>
+        </ul>
+
+        <b>5.2 Client:</b>
+        <ul>
+            <li> HTML</li>
+            <li> CSS</li>
+            <li> Browser clienți
+            </li>
+
+        </ul>
+    </section>
+    <section>
+        <h4>6. Arhitectura aplicației</h4>
+        <div style="text-align:center;"><img src="UntitledDiagram.png" style="width: 80%;" alt="container-diagram">
+            <h6>Picture 3 Diagrama de containere</h6>
+        </div>
+        <p>Construcția aplicației se bazează pe modelul arhitectural MVC.
+            View-urile sunt reprezentate prin paginile HTML+CSS, fiecăruia corespunzându-i mai multe controlere.
+            Controlerele fac legătură între vizualizare și funcționalitățile aplicației descrise mai sus sau acțiunile
+            derulate automat la nivelul serverului prin interpretarea datelor primite de la senzor.
+        </p>
+    </section>
+    <section>
+        <h4>7. Baza de date</h4>
+        <div style="text-align: center;"><img src="tw-bd-diagram.png" style="width: 80%;" alt="Bd-diagram">
+            <h6>Picture 5 Diagrama baza de date</h6>
+        </div>
+    </section>
+    <section>
+        <h4> 8. Surse de date externe</h4>
+        <p> <b>Sensor Kid:</b>
+            <p>Realizat ca și un microserviciu PHP cu ajutorul API REST. Microserviciul va prelua
+                datele
+                din
+                formularul senzorului folosind POST, apoi le va transmite prin PUT la un URL de forma
+                http:localhost:”port”/sensor/id-kid. Aplicația va cere în mod continuu date pentru a afla locația și
+                starea
+                copilului pentru posibile procesări. Cererea va fi de forma http:localhost:”port”/sensor/id-kid, iar
+                răspunsul
+                va fi preluat în format JSON.</p>
+            <b>Google Map API:</b>
+            <p>Pentru afișarea hărții împreună cu locația actuală a copilului se va realiza
+                o
+                cerere
+                HTTPS inclusă într-un cod HTML asemănător :</p>
+            <i><br>&lt; div class="mapouter">
+                &lt; ; div class="gmap_canvas">&lt; iframe width="600" height="500" id="gmap_canvas"
+                src="https://maps.google.com/maps?q=<u>latitudine</u>%20<u>longitudine</u>&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                frameborder="0" scrolling="no" marginheight="0" marginwidth="0">&lt; /iframe>&lt; a
+                href="https://www.emojilib.com">emojilib.com&lt; /a>&lt; /div>
+                &lt; style>
+                .mapouter {
+                position: relative;
+                text-align: right;
+                height: 500px;
+                width: 600px;
+                }
+
+                .gmap_canvas {
+                overflow: hidden;
+                background: none !important;
+                height: 500px;
+                width: 600px;
+                }
+                &lt; /style>
+                &lt; /div></i>
+
+            <p>Cererea se va face către Embed Google Map API, generator de cod
+                HTML
+                pentru hărți Google pentru o
+                anumită locație(dată prin latitudine și longitudine).
+            </p>
+
+    </section>
+</body>
+
+</html>
