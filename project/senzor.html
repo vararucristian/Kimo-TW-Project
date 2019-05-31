@@ -11,27 +11,27 @@
 
 <body>
     <main>
-        <form>
+        <form method="GET" action="senzor.php">
             <p> Kid Sensor</p><br>
             <div id="kid_id">
                 <img src="images/index.png" alt="user">
-                <input type="text" value="Kid ID">
+                <input type="text" name="id" placeholder="Kid ID">
             </div>
             <div id="location">
                 <img src="images/73527377-location-icon-simple-flat-logo-of-location-sign-on-white-background-vector-illustration-.jpg.png"
                     alt="location">
-                <input type="text" value="latitude">
-                <input type="text" value="longitude">
+                <input type="text" placeholder="latitude" name="latitude">
+                <input type="text" placeholder="longitude" name="longitude">
             </div>
             <p>Conditions</p>
             <div id="condition">
-                <div><br>Normal condition <input type="checkbox"></div>
-                <div><br> Animal close <input type="checkbox"></div>
-                <div><br> Accident <input type="checkbox"></div>
-                <div><br> Collision with an object <input type="checkbox"></div>
-                <div><br> Meeting another person <input type="checkbox"></div>
+                <div><br>Normal condition <input type="checkbox" name="normal_condition"></div>
+                <div><br> Animal close <input type="checkbox" name="animal_close"></div>
+                <div><br> Accident <input type="checkbox" name="accident"></div>
+                <div><br> Collision with an object <input type="checkbox" name="collision"></div>
+                <div><br> Meeting another person <input type="checkbox" name="another_person"></div>
             </div>
-            <br><input type="button" id="end" value="submit">
+            <br><input type="submit" id="end" value="submit">
 
         </form>
     </main>
