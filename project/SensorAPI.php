@@ -12,17 +12,47 @@ class SensorApi{
         if($_SERVER['REQUEST_METHOD']=='GET')
             $this->get_method();
         if($_SERVER['REQUEST_METHOD']=='POST')
-            $this->post_method();      
-            
+            $this->post_method();    
+        if($_SERVER['REQUEST_METHOD']=='PUT')
+            $this->put_method();      
+        
     }
 
     function post_method(){
         try{
+        $data = json_decode(file_get_contents('php://input'), true);
+        $params=array("latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
+        foreach($params as $param){
+            if (!array_key_exists ($param,$data ))        
+                throw new Exception("Necessary parameter not set!");
+        }
+        $sql="insert into sensor(latitude,longitude,normal_condition,animal_close,accident,collision,another_person) values (?,?,?,?,?,?,?)";
+        $stmt=$this->connection->prepare($sql);
+        $s=1;
+        $stmt->bind_param("ddiiiii",$data["latitude"],$data["longitude"],$data["normal_condition"],$data["animal_close"],$data["accident"],$data["collision"],$data["another_person"]);
+        $stmt->execute();
+        $result =array("message"=>"succes");
+        header('Content-type:application/json;charset=utf-8');
+        http_response_code(200);  
+        echo json_encode($result);
+        }catch(Exception $e){
+            $result =array("message"=>$e->getMessage());
+            header('Content-type:application/json;charset=utf-8');
+            http_response_code(400);  
+            echo json_encode($result);}
+            
+            
+
+    }
+
+
+    function put_method(){
+        try{
 
             $data = json_decode(file_get_contents('php://input'), true);
-            if( !array_key_exists ("id",$data ))
+            if( !isset($_GET["id"]))
                 throw new Exception("Necessary parameter not set!");
-            $id=$data["id"];        
+            $id=$_GET["id"];        
             $params=array("latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
             foreach($params as $param){
             if (array_key_exists ($param,$data )){
