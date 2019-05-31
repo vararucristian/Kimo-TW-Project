@@ -18,17 +18,19 @@ class SensorApi{
 
     function post_method(){
         try{
-            if(!isset($_POST["id"]))
+
+            $data = json_decode(file_get_contents('php://input'), true);
+            if( !array_key_exists ("id",$data ))
                 throw new Exception("Necessary parameter not set!");
-            $id=$_POST["id"];        
+            $id=$data["id"];        
             $params=array("latitude","longitude","normal_condition","animal_close","accident","colission","another_person");
             foreach($params as $param){
-            if (isset($_POST[$param])){
-                $sql="update sensor set ".$param."=".$_POST[$param]." where id=".$id;
+            if (array_key_exists ($param,$data )){
+                $sql="update sensor set ".$param."=".$data[$param]." where id=".$id;
                 $this->connection->query($sql);
             } 
         }
-            $result =array("message"=>"succes");
+             $result =array("message"=>"succes");
             header('Content-type:application/json;charset=utf-8');
             http_response_code(200) ; 
             echo json_encode($result);
