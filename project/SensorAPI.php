@@ -23,7 +23,7 @@ class SensorApi{
             if( !array_key_exists ("id",$data ))
                 throw new Exception("Necessary parameter not set!");
             $id=$data["id"];        
-            $params=array("latitude","longitude","normal_condition","animal_close","accident","colission","another_person");
+            $params=array("latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
             foreach($params as $param){
             if (array_key_exists ($param,$data )){
                 $sql="update sensor set ".$param."=".$data[$param]." where id=".$id;
