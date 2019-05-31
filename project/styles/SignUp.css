@@ -58,6 +58,15 @@ form{
     grid-template-columns: 8% 41% 41%;
     border-bottom: 2px solid black;
 }
+form :nth-child(3){
+    padding-top:15px;
+    margin-left:20%;
+    margin-right:10%;
+    display:grid;
+    grid-template-columns: 100%;
+    border-bottom: 2px solid black;
+    height: 50px;
+}
 .SignUpBox img{
     width:100%;
 }

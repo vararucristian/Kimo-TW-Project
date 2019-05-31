@@ -9,7 +9,7 @@
 </head>
 <body>
     <main>
-        <form>
+        <form  action="controllerSignUp.php" method="POST">
             <div id="Logo">
                 <img src="images/images.png" alt="Logo">
                 <h1 id="KIMO">KIMO APP</h1>
@@ -17,36 +17,41 @@
             <div class="SignUpBox">
                 <img src="images/index.png" alt="user">
                 <div>
-                    <input type="text" placeholder="First name">
-                    <input type="text" placeholder="Last name"> 
+                    <input type="text" placeholder="First name" name="fname">
+                    <input type="text" placeholder="Last name" name="lname"> 
                 </div>
             </div>
             <div class="SignUpBox">
-                    <img src="images/parola.png" alt="user">
                     <div>
-                        <input type="text" placeholder="Username">
-                        <input type="text" placeholder="Password">
+                        <input type="text" placeholder="Username" mane="username">
                     </div>
             </div>
             <div class="SignUpBox">
+                <img src="images/parola.png" alt="user">
+                <div>
+                    <input type="text" placeholder="Password" name="password1">
+                    <input type="text" placeholder="Confirm Password" name="password2">
+                </div>
+        </div>
+            <div class="SignUpBox">
                 <img src="images/73527377-location-icon-simple-flat-logo-of-location-sign-on-white-background-vector-illustration-.jpg.png" alt="user">
                 <div>
-                    <input type="text" placeholder="Latitude">
-                    <input type="text" placeholder="Longitude">
+                    <input type="text" placeholder="Latitude" name="latitude">
+                    <input type="text" placeholder="Longitude" name="logitude">
                 </div>
             </div>
             <div class="SignUpBox">
                     <img src="images/phone2.png" alt="user">
                     <div>
-                        <input type="text" placeholder="Phone Number">
-                        <input type="text" placeholder="E-mail">
+                        <input type="text" placeholder="Phone Number" name="phone">
+                        <input type="text" placeholder="E-mail" name="email">
                     </div>
             </div>
             <div id="gen">
                 <input type="radio" name="gender" value="Male"> Male
                 <input type="radio" name="gender" value="Female"> Female
             </div>
-            <input type="submit" formaction="index.html" id="butonSignUp" value="Sign up">
+            <input type="submit"  name="butonSignUp" id="butonSignUp" value="Sign up">
         </form>
     </main> 
 </body>
