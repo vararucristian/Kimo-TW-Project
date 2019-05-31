@@ -19,7 +19,7 @@ function call_service(){
     $data_string = json_encode($data);
     $ch = curl_init('http://localhost/project/sensorAPI.php?id='.$id);    
     curl_setopt($ch,CURLOPT_POST,true);                 
-    curl_setopt($ch,CURLOPT_CUSTOMREQUEST,' ');                                                                                                                   
+    curl_setopt($ch,CURLOPT_CUSTOMREQUEST,'PUT');                                                                                                                   
     curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);   
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                                                            
     $result=curl_exec($ch);
