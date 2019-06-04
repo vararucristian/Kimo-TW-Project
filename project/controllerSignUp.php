@@ -2,6 +2,7 @@
 include 'SignUp.html';
 include 'modelSignUp.php';
 if(isset($_POST['butonSignUp']))
-    if(!isset($_POST['fname']) || !isset($_POST['lname']))
+    if($_POST['fname']=="" || $_POST['lname']=="")
         echo "Un parametru nu a fost setat!!!";
+        else echo "da";
 ?>
