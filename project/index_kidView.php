@@ -1,4 +1,27 @@
-﻿<!DOCTYPE html>
+<?php
+include "index_kidController.php";
+class indexKidView{
+public $kidController;
+private $id;
+public $picture;
+public $first_name;
+public $last_name;
+public $genre;
+
+public function __construct($id){
+  $this->kidController=new indexKidController();
+  $this->id=$id;
+  $this->picture=$this->kidController->getPicture($id);
+  $this->first_name=$this->kidController->getFirstName($id);
+  $this->last_name=$this->kidController->getLastName($id);
+
+}
+
+}
+$kid=new indexKidView(1);
+?>
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -83,8 +106,8 @@
 
     </div>
     <div class="profile">
-      <div id="dataprofile"><img src="images/picture145716079994.jpg" alt="boy">
-        <div id="name"> Kid 1</div>
+      <div id="dataprofile"><img src="<?php echo $kid->picture; ?>" alt="boy">
+        <div id="name"> <?php echo $kid->first_name." ".$kid->last_name; ?></div>
       </div>
       <div class="map"><img src="images/Capture.jpg " alt="map"></div>
     </div>
