@@ -40,6 +40,16 @@ class indexKidModel{
         return $name;
     }
 
+    public function getGenre($id){
+        $sql = "SELECT genre FROM children where id=?";
+        $stmt=$this->connection->prepare($sql);
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $stmt->bind_result($genre);
+        $stmt->fetch();    
+        return $genre;
+    }
+
 }
 
 

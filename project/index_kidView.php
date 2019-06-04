@@ -1,24 +1,8 @@
 <?php
 include "index_kidController.php";
-class indexKidView{
-public $kidController;
-private $id;
-public $picture;
-public $first_name;
-public $last_name;
-public $genre;
-
-public function __construct($id){
-  $this->kidController=new indexKidController();
-  $this->id=$id;
-  $this->picture=$this->kidController->getPicture($id);
-  $this->first_name=$this->kidController->getFirstName($id);
-  $this->last_name=$this->kidController->getLastName($id);
-
-}
-
-}
-$kid=new indexKidView(1);
+include "index_kidFriendsController.php";
+$kid=new indexKidController(1);
+$friendsController=new indexKidFriendsController(1);
 ?>
 
 <!DOCTYPE html>
@@ -92,11 +76,10 @@ $kid=new indexKidView(1);
       
         <div class="person">Interactions with other kids
           <ul>
-            <li><a href="Message.html"> Friend 1</a></li>
-            <li><a href="Message.html"> Friend 2</a></li>
-            <li><a href="Message.html"> Friend 3</a></li>
-            <li><a href="Message.html"> Friend 4</a></li>
-           
+            <?php
+              foreach ($friendsController->friends as $friend)
+                  echo "<li><a href='Message.html'>" .$friend->first_name." ".$friend->last_name."</a></li>"
+            ?>         
           </ul>
         </div>
       
