@@ -1,5 +1,7 @@
 <?php
-include "senzor.html";
+class sensorModel{
+
+
 function call_service(){
     $id=$_GET["id"];
     $params=array("latitude","longitude");
@@ -25,11 +27,5 @@ function call_service(){
     $result=curl_exec($ch);
     curl_close($ch);
 }
-
-
-
-
-if (isset($_GET["id"]))
-    if ($_GET["id"]!="")
-        call_service();
+}
 ?>
