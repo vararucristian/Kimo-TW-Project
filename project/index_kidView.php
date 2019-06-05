@@ -1,4 +1,11 @@
-﻿<!DOCTYPE html>
+<?php
+include "index_kidController.php";
+include "index_kidFriendsController.php";
+$kid=new indexKidController(1);
+$friendsController=new indexKidFriendsController(1);
+?>
+
+<!DOCTYPE html>
 <html>
 
 <head>
@@ -69,11 +76,10 @@
       
         <div class="person">Interactions with other kids
           <ul>
-            <li><a href="Message.html"> Friend 1</a></li>
-            <li><a href="Message.html"> Friend 2</a></li>
-            <li><a href="Message.html"> Friend 3</a></li>
-            <li><a href="Message.html"> Friend 4</a></li>
-           
+            <?php
+              foreach ($friendsController->friends as $friend)
+                  echo "<li><a href='Message.html'>" .$friend->first_name." ".$friend->last_name."</a></li>"
+            ?>         
           </ul>
         </div>
       
@@ -83,8 +89,8 @@
 
     </div>
     <div class="profile">
-      <div id="dataprofile"><img src="images/picture145716079994.jpg" alt="boy">
-        <div id="name"> Kid 1</div>
+      <div id="dataprofile"><img src="<?php echo $kid->picture; ?>" alt="boy">
+        <div id="name"> <?php echo $kid->first_name." ".$kid->last_name; ?></div>
       </div>
       <div class="map"><img src="images/Capture.jpg " alt="map"></div>
     </div>

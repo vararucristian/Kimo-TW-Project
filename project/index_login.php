@@ -20,14 +20,19 @@
             <form action="loginController.php" method="POST">
                 <div class="loginBox">
                     <img src="images/index.png" alt="user" >
-                    <input type="text" placeholder="Your username" name="username">
+                    <input type="text" placeholder="Your username" name="username" required>
                 </div>
                 <div class="loginBox">
                     <img src="images/parola.png" alt="password">
-                    <input type="password" placeholder="Your password" name="password">
+                    <input type="password" placeholder="Your password" name="password" required>
                 </div>
                 <input type="submit" id="butonLogin" value="Login" name="login">
             </form>
+            <?php 
+                    if(isset($logat) && $logat === false) {
+                        echo '<p style="margin-left: 15%;text-align: center;color: red;font-size: 1.5rem;"><b> Ups! Wrong username or password. Please, try again!</b></p>';
+                    } 
+                ?>
             <p id="SignUp">
                     Don't have an account?
                     <a href="SignUp.html" target="_blank">Sign Up!</a>
