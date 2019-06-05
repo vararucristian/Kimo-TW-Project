@@ -23,7 +23,7 @@
             </div>
             <div class="SignUpBox">
                     <div>
-                        <input type="text" placeholder="Username" mane="username">
+                        <input type="text" placeholder="Username" name="username">
                     </div>
             </div>
             <div class="SignUpBox">
@@ -37,14 +37,14 @@
                 <img src="images/73527377-location-icon-simple-flat-logo-of-location-sign-on-white-background-vector-illustration-.jpg.png" alt="user">
                 <div>
                     <input type="text" placeholder="Latitude" name="latitude">
-                    <input type="text" placeholder="Longitude" name="logitude">
+                    <input type="text" placeholder="Longitude" name="longitude">
                 </div>
             </div>
             <div class="SignUpBox">
                     <img src="images/phone2.png" alt="user">
                     <div>
-                        <input type="text" placeholder="Phone Number" name="phone">
-                        <input type="text" placeholder="E-mail" name="email">
+                        <input type="tel" placeholder="Phone Number" name="phone">
+                        <input type="email" placeholder="E-mail" name="email">
                     </div>
             </div>
             <div id="gen">
@@ -52,13 +52,29 @@
                 <input type="radio" name="gender" value="Female"> Female
             </div>
            <input type="submit"  name="butonSignUp" id="butonSignUp" value="Sign up">
-           <div>
-               <?php
-               if ($logat==false)
-               echo "Gresit!";
+           <?php
+                $error="";
+               if ($empty_field==false)
+                    echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> All the fields has to be completed! Please, try again!</b></p>';
+                    else
+                        if ($incorrect_data==true)
+                        echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Latidude or longitude incorrect! Please, try again!</b></p>';
+                        else
+                          if ($short_password==true)
+                            echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password too short! Please, try again!</b></p>';
+                            else
+                            if ($easy_password==true)
+                                echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password too easy! Please, try again!</b></p>';
+                                else
+                               if ($different_passwords==true)
+                                echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Incorrect password confirmation! Please, try again!</b></p>';
+                                else
+                                    if ($username_used==true)
+                                        echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Username is already used! Please, try again!</b></p>';
+                                        
                ?>
-           </div>
         </form>
+    
     </main> 
 </body>
 </html>
