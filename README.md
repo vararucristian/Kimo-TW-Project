@@ -12,7 +12,8 @@ CREATE TABLE `project`.`accounts` ( `id` INT NOT NULL AUTO_INCREMENT ,  `fname` 
 CREATE TABLE `project`.`locations` ( `id` INT NOT NULL AUTO_INCREMENT ,  `latitude` DOUBLE NOT NULL ,  `longitude` DOUBLE NOT NULL ,    PRIMARY KEY  (`id`)) ENGINE = InnoDB;
 alter table locations add CONSTRAINT UNIQUE(latitude, longitude)
 
-create table user_loactions (id_user int , id_location int, foreign key (id_user) references accounts(id), foreign key (id_location) references locations(id))
+create table user_locations (id_user int , id_location int, foreign key (id_user) references accounts(id), foreign key (id_location) references locations(id))
+
 children:
 ----------------------------
 CREATE TABLE `project`.`children` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(30) NOT NULL , `last_name` VARCHAR(30) NOT NULL , `genre` VARCHAR(10) NOT NULL , `picture` VARCHAR(300) NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 

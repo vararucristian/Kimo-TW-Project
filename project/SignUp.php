@@ -57,6 +57,9 @@
                if ($empty_field==false)
                     echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> All the fields has to be completed! Please, try again!</b></p>';
                     else
+                        if ($incorrect_name==true)
+                         echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> First name and last name only contains letters startig with [A-Z]! Please, try again!</b></p>';
+                        else
                         if ($incorrect_data==true)
                         echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Latidude or longitude incorrect! Please, try again!</b></p>';
                         else
@@ -64,7 +67,7 @@
                             echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password too short! Please, try again!</b></p>';
                             else
                             if ($easy_password==true)
-                                echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password too easy! Please, try again!</b></p>';
+                                echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password not safe! Please, try again!</b></p>';
                                 else
                                if ($different_passwords==true)
                                 echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Incorrect password confirmation! Please, try again!</b></p>';
