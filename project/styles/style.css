@@ -209,6 +209,7 @@ nav ul ul li:hover{
     background-color: #336699   ;
 }
 
+
 #map{
     background-image:url("images/maps.jpg");
     background-size: cover;
@@ -264,6 +265,11 @@ nav ul li img{
     nav nav ul li:nth-of-type(3):hover{
         background-color:#336699;
     }
+
+    input{
+        color:#fff;
+        margin-left:30%;
+    }
     
     main{
         min-height: 650px;
@@ -296,6 +302,7 @@ nav ul li img{
         color:black;
         
     }
+
     footer #email{
         margin-left:30%;;
         display: grid;

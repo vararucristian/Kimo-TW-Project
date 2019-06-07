@@ -35,7 +35,7 @@
                 ?>
             <p id="SignUp">
                     Don't have an account?
-                    <a href="SignUp.html" target="_blank">Sign Up!</a>
+                    <a href="controllerSignUp.php" target="_blank">Sign Up!</a>
              </p>
         </div>
     </main>

@@ -25,14 +25,27 @@ function login($user, $pass){
     }
 }
 
+function getID($user){
+    GLOBAL $conn;
+
+    $sql = 'select id from accounts where username = ?';
+    $rezultat = $conn->prepare($sql);
+    $rezultat->bind_param('s', $user -> username);
+    $rezultat->execute();
+    $rez = $rezultat->get_result();
+    $rezultat->close();
+    $inregistrare = $rez->fetch_assoc();
+    return $inregistrare['id'];
+}
 
 class User{
     public $username;
     public $password;
 
-    function _construct($username, $password){
+    function __construct($username, $password){
         $this -> username = $username;
         $this -> password = $password;
     }
+
 }
 ?>

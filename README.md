@@ -28,3 +28,13 @@ ADD FOREIGN KEY (id_kid1) REFERENCES children(id)
 ALTER TABLE friends
 ADD FOREIGN KEY (id_kid2) REFERENCES children(id);
 ----------------------------
+tokens
+----------------------------
+CREATE TABLE `project`.`tokens` ( `id` INT NOT NULL AUTO_INCREMENT , `value` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+----------------------------
+account_tokens
+----------------------------
+CREATE TABLE `project`.`account_tokens` ( `id_account` INT NOT NULL , `id_token` INT NOT NULL ) ENGINE = InnoDB;
+ALTER TABLE account_tokens add CONSTRAINT FOREIGN KEY(id_account) REFERENCES accounts(id)
+alter table account_tokens add CONSTRAINT FOREIGN KEY(id_token) REFERENCES tokens(id)
+----------------------------
