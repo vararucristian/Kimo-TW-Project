@@ -17,6 +17,11 @@ create table user_locations (id_user int , id_location int, foreign key (id_user
 children:
 ----------------------------
 CREATE TABLE `project`.`children` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(30) NOT NULL , `last_name` VARCHAR(30) NOT NULL , `genre` VARCHAR(10) NOT NULL , `picture` VARCHAR(300) NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB; 
+
+CREATE TABLE `project`.`account_childs` ( `id_account` INT NOT NULL , `id_child` INT NOT NULL ) ENGINE = InnoDB;
+alter table account_childs add FOREIGN key (id_child) references children(id)
+alter table account_childs add FOREIGN key (id_account) references accounts(id)
+
 ----------------------------
 friends:
 ----------------------------

@@ -91,5 +91,5 @@ class modelSignUp{
         $success = $locationStmt -> execute();
         $locationStmt -> close();
     }
-}
+} 
 ?>
