@@ -1,8 +1,4 @@
-<?php
-include "index_kidController.php";
-include "homeController.php";
-$homeController=new homeController();
-?>
+
 <!DOCTYPE html>
 <html>
 
@@ -88,10 +84,17 @@ $homeController=new homeController();
         </nav>
     </nav>
     <main>
+            
             <?php
+        
                 foreach ($homeController->childs as $child)
-                  echo "<div><img src=\"images/".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">  </div>"
+                  {
+                      echo "<form method=\"POST\" action=\"index_kidController.php\"><img src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
+                      echo "<input type=\"hidden\" name=\"childId\" value=\"".$child->getID()."\" /></form>";
+                    }
+
                   ?>
+            
         <a href="#modal2" class="modal-trigger">
             <div id="add"><img src="images/add.png" alt="add"></div>
         </a>

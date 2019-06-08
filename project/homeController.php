@@ -1,5 +1,6 @@
 <?php
 include "homeModel.php";
+include "kidController.php";
 include "checkSession.php";
 class homeController{
 public $childs;
@@ -14,6 +15,9 @@ public function __construct(){
 public function getChilds(){
    return $this->homeModel->getchilds($this->id);
 }
+
 }
+$homeController=new homeController();
+include "index.php";
 
 ?>

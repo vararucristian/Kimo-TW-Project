@@ -12,7 +12,6 @@ main {
     padding-left:5%;
     grid-template-columns: 50% 50%;
     padding-top:50px;
-    padding-bottom:50px;
     background-color:rgba(0, 0, 0, 0.7); 
     padding-left:15%;
     padding-right:15%;
@@ -45,17 +44,15 @@ main :nth-child(even){
     text-decoration: none;
 
 }
-main div:hover{
+main form:hover{
     background-color: #336699;
 }
 main a div:hover{
     background-color: #336699;
 }
  
-main  :nth-child(1) + div {
-    margin-top:50px;
-} 
- main div{
+
+ main form{
     height: 130px;
     border-radius:25px;
     align-items: center;
@@ -70,8 +67,22 @@ main  :nth-child(1) + div {
     font-size:15px;
     color:black;
 } 
-
-main div img{
+main a{
+    height: 130px;
+    border-radius:25px;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 40% 60%;
+    margin-bottom:0px;
+    margin-top:50px;
+    text-align: center;
+    background-color: #8cb3d9;
+    font-family: inherit;
+    font-weight: bold;
+    font-size:15px;
+    color:black;
+}
+main form img{
     margin: 0%;
     border-radius:25px 0 0 25px;
     width:100%;
@@ -283,13 +294,21 @@ nav ul li img{
         padding-right:15%;
         
     }
-    main div:nth-of-type(2){
+    main form:nth-of-type(even){
+    margin-left:0;
+    margin-right:0;    
+}
+main form:nth-of-type(odd){
+    margin-left:0;
+    margin-right:0;    
+} 
+main form:nth-of-type(1){
         margin-top:5px;
     }
-    main div{
+    main form{
         margin-bottom: 5px;
     }
-    main  div{
+    main form{
         border-radius:25px;
         align-items: center;
         display: grid;
