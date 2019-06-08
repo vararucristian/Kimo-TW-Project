@@ -33,5 +33,11 @@ public function getGenre($id){
     return $this->kidModel->getGenre($id);
 }
 }
+include "index_kidFriendsController.php";
+$id=2;
+$kid=new indexKidController($id);
+$friendsController=new indexKidFriendsController($id);
+
+include "index_kidView.php"
 
 ?>
