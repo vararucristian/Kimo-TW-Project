@@ -43,3 +43,15 @@ CREATE TABLE `project`.`account_tokens` ( `id_account` INT NOT NULL , `id_token`
 ALTER TABLE account_tokens add CONSTRAINT FOREIGN KEY(id_account) REFERENCES accounts(id)
 alter table account_tokens add CONSTRAINT FOREIGN KEY(id_token) REFERENCES tokens(id)
 ----------------------------
+close_persons
+----------------------------
+CREATE TABLE `project`.`close_persons` ( `id` INT NOT NULL AUTO_INCREMENT , `first_name` VARCHAR(50) NOT NULL , `last_name` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+CREATE TABLE `project`.`child_close_persons` ( `id_child` INT NOT NULL , `id_close_person` INT NOT NULL ) ENGINE = InnoDB; 
+ALTER TABLE child_close_persons ADD CONSTRAINT FOREIGN KEY(id_child) REFERENCES children(id)
+ALTER TABLE child_close_persons ADD CONSTRAINT FOREIGN KEY(id_close_person) REFERENCES close_persons(id)
+
+CREATE TABLE `project`.`close_person_location` ( `id_close_person` INT NOT NULL , `id_location` INT NOT NULL ) ENGINE = InnoDB; 
+ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_close_person) REFERENCES close_persons(id)
+ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_location) REFERENCES locations(id)
+----------------------------

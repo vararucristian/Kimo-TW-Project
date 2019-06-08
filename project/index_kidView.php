@@ -1,10 +1,3 @@
-<?php
-include "index_kidController.php";
-include "index_kidFriendsController.php";
-$kid=new indexKidController(1);
-$friendsController=new indexKidFriendsController(1);
-?>
-
 <!DOCTYPE html>
 <html>
 
@@ -118,11 +111,12 @@ $friendsController=new indexKidFriendsController(1);
       <section class="modal__content">
         <header class="modal__header">
           <h2 class="modal__title">Change the image</h2>
-          <a href="#" class="modal__close">Save</a>
+          <a href="#" onclick="document.getElementById('form2').submit();" class="modal__save">Save</a>
+          <a href="index_kidController.php" class="modal__close" >X</a>
         </header>
         <div class="modal__body">
           <p class="modal__text">
-            <form id="form2">
+            <form action="changePhotoController.php" method="POST" id="form2" enctype='multipart/form-data'>
               <div id="text">
 
                 <div id="addphoto">
@@ -142,19 +136,25 @@ $friendsController=new indexKidFriendsController(1);
         <section class="modal__content">
           <header class="modal__header">
             <h2 class="modal__title">Add a new person of interest</h2>
-            <a href="#" class="modal__close">Save</a>
+            <a href="#" onclick="document.getElementById('addPerson').submit();"class="modal__save" >Save</a>
+            <a href="index_kidController.php" class="modal__close" >X</a>
           </header>
           <div class="modal__body">
             <p class="modal__text">
-              <form>
-                Firstname and Lastname
-                <input type="text" name="name" placeholder="FirstName LastName">
+              <form action="AddClosePersonControlller.php" method="POST" id="addPerson">
+                Firstname
+                <input type="text" name="fname" placeholder="FirstName">
+                Lastname
+                <input type="text" name="lname" placeholder="LastName">
                 <img src="images/descărcare(2).png" alt="location">
                 Latitude:
                 <input type="text" name="latitude" placeholder="45.943161">
                 Longitude:
-                <input type="text" name="longitudine" placeholder="24.966761">
-                
+                <input type="text" name="longitude" placeholder="24.966761">
+                <?php
+                if(isset($_GET["check"]))
+                    echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upss!! A necessary field has not been completed!!</b></p>';
+                ?>
   
               </form>
           </div>
