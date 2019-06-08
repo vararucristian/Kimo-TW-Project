@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
         $id=getID($user);
         if($user !== NULL){
             genToken($id);     
-            header('Location: index.php');
+            header('Location: homeController.php');
             
             $_SESSION['sessionID'] = getID($user);
         }
