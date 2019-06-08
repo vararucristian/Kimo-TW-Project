@@ -124,15 +124,20 @@
             <section class="modal__content">
                 <header class="modal__header">
                     <h2 class="modal__title">Add kid</h2>
-                    <a href="#" class="modal__close">Add</a>
+                    <a href="#" onclick="document.getElementById('form2').submit();"class="modal__save" >Add</a>
+                    <a href="homeController.php" class="modal__close" >X</a>
                 </header>
                 <div class="modal__body">
                     <p class="modal__text">
-                        <form id="form2">
+                        <form action="AddKidController.php"  method="POST" id="form2">
                             <div id="text">
                                 <div class="item">
-                                    Kid's name:
-                                    <input type="text" name="name" placeholder="FirstName LastName">
+                                    Kid's first name:
+                                    <input type="text" name="fname" placeholder="FirstName">
+                                </div>
+                                <div class="item">
+                                    Kid's last name:
+                                <input type="text" name="lname" placeholder="LastName">
                                 </div>
                                 <div class="item">
                                     Sensor's code:
@@ -151,6 +156,13 @@
                                 Add a photo with your child:
                                 <input type="file" name="photo">
                             </div>
+                            <?php
+                            if(isset($_GET["check"]))
+                                 echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! A necessary field has not been completed!!!</b></p>';
+                            else
+                            if (isset($_GET["name"]))
+                                 echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! First name or last name was wrong!!!</b></p>';
+                             ?>
                         </form>
                 </div>
                 <footer class="modal__footer">

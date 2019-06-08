@@ -1,7 +1,10 @@
 <?php
 include "kidController.php";
 include "index_kidFriendsController.php";
-$id=$_POST["childId"];
+session_start();
+if (!isset($_SESSION['childId']))
+   $_SESSION['childId']=$_POST["childId"];
+$id=$_SESSION['childId'];
 $kid=new indexKidController($id);
 $friendsController=new indexKidFriendsController($id);
 
