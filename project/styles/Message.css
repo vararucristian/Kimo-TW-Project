@@ -181,6 +181,12 @@ main{
     color: #009CEA;
 }
 
+#profil div h1{
+    align-self: center;
+    font-size: 2em;
+    color: #009CEA;
+}
+
 #profil div p:hover{
     transform: scale(1.1);
 }
