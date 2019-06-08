@@ -1,3 +1,8 @@
+<?php
+include "index_kidController.php";
+include "homeController.php";
+$homeController=new homeController();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -10,7 +15,7 @@
 </head>
 
 <style>
-    input{
+    .button {
     border:none;
     background: none;
     text-align: center;
@@ -24,13 +29,12 @@
     outline: none;
 }
 
-
-input:hover{
+.button:hover{
     color: #fff;
 }
 
 @media screen and (max-width: 760px){
-    input{
+    .button{
         color:#fff;
         margin-left:30%;
     }
@@ -38,12 +42,6 @@ input:hover{
 
 
 </style>
-
-<?php
-    session_start();
-    include "checkSession.php";
-    checkToken();
-?>
 
 <body>
 
@@ -62,7 +60,7 @@ input:hover{
                 </ul>
             </li>
             <li><a href="index_profile.html">My Account</a></li>
-            <li><form method="POST" action="logout.php"><input type="submit" name="logout" value="Log Out" ></form></li>
+            <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
             <ul>
@@ -90,21 +88,10 @@ input:hover{
         </nav>
     </nav>
     <main>
-        <a href="index_kid.html">
-            <div><img src="images/picture145716079994.jpg" alt="kid"> kid name1 </div>
-        </a>
-        <a href="index_kid.html">
-            <div><img src="images/picture145716079994.jpg" alt="kid"> kid name2</div>
-        </a>
-        <a href="index_kid.html">
-            <div><img src="images/clipart2755860.png" alt="kid"> kid name3</div>
-        </a>
-        <a href="index_kid.html">
-            <div><img src="images/picture145716079994.jpg" alt="kid"> kid name4</div>
-        </a>
-        <a href="index_kid.html">
-            <div><img src="images/clipart2755860.png" alt="kid"> kid name5</div>
-        </a>
+            <?php
+                foreach ($homeController->childs as $child)
+                  echo "<div><img src=\"images/".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">  </div>"
+                  ?>
         <a href="#modal2" class="modal-trigger">
             <div id="add"><img src="images/add.png" alt="add"></div>
         </a>

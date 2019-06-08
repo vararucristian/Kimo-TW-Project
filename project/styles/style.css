@@ -7,7 +7,7 @@ body{
 img{
     max-width: 100%;
 }
-main{
+main {
     display: grid;
     padding-left:5%;
     grid-template-columns: 50% 50%;
@@ -19,12 +19,12 @@ main{
     min-height: 600px;
     
 }
-main div:nth-child(odd){
+ main :nth-child(odd){
     margin-right: 5%;
 }
-main div:nth-child(even){
+main :nth-child(even){
     margin-left: 5%;
-}
+} 
 #add img{
     width: 30%;
 }
@@ -41,39 +41,42 @@ main div:nth-child(even){
 }
 
 
-main a{
+ main {
     text-decoration: none;
 
 }
 main div:hover{
     background-color: #336699;
 }
-main a:nth-of-type(1){
-    margin-top:50px;
+main a div:hover{
+    background-color: #336699;
 }
-main a:nth-of-type(2){
+ 
+main  :nth-child(1) + div {
     margin-top:50px;
-}
-main div{
+} 
+ main div{
+    height: 130px;
     border-radius:25px;
     align-items: center;
     display: grid;
     grid-template-columns: 40% 60%;
-    margin-bottom:20px;
+    margin-bottom:0px;
+    margin-top:50px;
     text-align: center;
     background-color: #8cb3d9;
     font-family: inherit;
     font-weight: bold;
     font-size:15px;
     color:black;
-    
-}
+} 
 
 main div img{
+    margin: 0%;
     border-radius:25px 0 0 25px;
     width:100%;
     height: 130px;
-}
+} 
 footer{
     display: grid;
     grid-template-columns: 50% 50%; 
@@ -123,8 +126,6 @@ nav{
     width:100%; 
     margin:0;
     position: fixed;
-    
-
 }
 nav ul{
     margin:0;
@@ -282,13 +283,13 @@ nav ul li img{
         padding-right:15%;
         
     }
-    main a:nth-of-type(2){
-        margin-top:0;
+    main div:nth-of-type(2){
+        margin-top:5px;
     }
-    main a{
+    main div{
         margin-bottom: 5px;
     }
-    main a div{
+    main  div{
         border-radius:25px;
         align-items: center;
         display: grid;
