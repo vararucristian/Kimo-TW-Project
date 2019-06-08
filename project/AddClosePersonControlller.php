@@ -32,9 +32,9 @@ if ($closePerson->checkData==false)
         {   
             header("location:index_kidController.php?check=false#modal");
         }
-    
-include "index_kidController.php";
+session_start();  
 $closePerson->addPerson();
+header("location:index_kidController.php");
 
 
 

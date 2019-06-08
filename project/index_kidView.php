@@ -58,10 +58,10 @@
     <div class="act">
         <div class="person"> People of interest
           <ul>
-            <li>Person 1</li>
-            <li>Person 2</li>
-            <li>Person 3</li>
-            <li>Person 4</li>
+          <?php
+              foreach ($closePersonsController->getClosePersons() as $closePersons)
+                  echo "<li>" .$closePersons->first_name." ".$closePersons->last_name."</a></li>"
+            ?> 
             <li><a href="#modal" class="modal-trigger">Add new person</a></li>
           </ul>
         </div>
