@@ -6,7 +6,8 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/images.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <!-- <link rel="stylesheet" type="text/css" href="styles/style.css"> -->
+    <link href="styles/style.css?v=<?php echo time(); ?>" rel="stylesheet" type="text/css" />
     <title>Kimo</title>
 </head>
 
@@ -35,7 +36,6 @@
         margin-left:30%;
     }
 }
-
 
 </style>
 

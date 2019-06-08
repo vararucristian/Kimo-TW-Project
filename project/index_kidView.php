@@ -10,6 +10,32 @@
   <title>My kid</title>
 </head>
 
+<style>
+    .button {
+    border:none;
+    background: none;
+    text-align: center;
+    font-family: inherit;
+    font-weight: bold;
+    color:black;
+    text-decoration: none;
+    display: block; padding: 5% 5%;
+    outline: none;
+}
+
+.button:hover{
+    color: #fff;
+}
+
+@media screen and (max-width: 760px){
+    .button{
+        color:#fff;
+        margin-left:30%;
+    }
+}
+
+</style>
+
 <body>
 
   <nav>
@@ -70,8 +96,12 @@
         <div class="person">Interactions with other kids
           <ul>
             <?php
-              foreach ($friendsController->friends as $friend)
-                  echo "<li><a href='Message.html'>" .$friend->first_name." ".$friend->last_name."</a></li>"
+              foreach ($friendsController->friends as $friend){
+                  echo "<form method=\"POST\" action=\"messageController.php\"><input class=\"button\" type=\"submit\" value =".$friend->first_name."&nbsp;&nbsp;".$friend->last_name.">";
+                  echo "<input type=\"hidden\" name=\"friendId\" value=\"".$friend->getID()."\" /></form>";
+                  session_start();
+                  $_SESSION['friendID'] = $friend->getID();
+              }
             ?>         
           </ul>
         </div>
