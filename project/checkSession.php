@@ -2,7 +2,6 @@
 $conn = new mysqli('localhost', 'root', '', 'project');
 function genToken($id){
     global $conn;
-    echo "DAAAA";
     if(!isset($_SESSION['user_token'])){
         $_SESSION['user_token']=md5(uniqid());
         insertToken($id);
