@@ -129,7 +129,7 @@
                 </header>
                 <div class="modal__body">
                     <p class="modal__text">
-                        <form action="AddKidController.php"  method="POST" id="form2">
+                        <form action="AddKidController.php"  method="POST" id="form2" enctype="multipart/form-data">
                             <div id="text">
                                 <div class="item">
                                     Kid's first name:
@@ -142,26 +142,27 @@
                                 <div class="item">
                                     Sensor's code:
                                     <input type="text" name="code" placeholder="Code">
-
                                 </div>
                             </div>
 
                             <div class="item">
                                 Gender:
                                 <div id="gen">
-                                    <input type="radio" class="gender" placeholder="Girl" name="kidgen">Girl
-                                    <input type="radio" class="gender" placeholder="Boy" name="kidgen">Boy</div>
-                            </div>
+                                    <input type="radio" class="gender" placeholder="Girl" name="gender" value="Girl">Girl
+                                    <input type="radio" class="gender" placeholder="Boy" name="gender" value="Boy">Boy</div>
+                            <!-- </div>
                             <div id="addphoto">
                                 Add a photo with your child:
                                 <input type="file" name="photo">
-                            </div>
+                            </div> -->
                             <?php
                             if(isset($_GET["check"]))
                                  echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! A necessary field has not been completed!!!</b></p>';
                             else
                             if (isset($_GET["name"]))
                                  echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! First name or last name was wrong!!!</b></p>';
+                            if (isset($_GET["sensor"]))
+                                 echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>The sensor\'s code is not valid!!!</b></p>';
                              ?>
                         </form>
                 </div>

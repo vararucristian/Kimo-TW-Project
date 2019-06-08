@@ -55,3 +55,7 @@ CREATE TABLE `project`.`close_person_location` ( `id_close_person` INT NOT NULL 
 ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_close_person) REFERENCES close_persons(id)
 ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_location) REFERENCES locations(id)
 ----------------------------
+
+
+CREATE TABLE `project`.`sensor_codes` ( `id` INT NOT NULL AUTO_INCREMENT , `value` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB
+
