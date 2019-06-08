@@ -159,9 +159,9 @@
                             <?php
                             if(isset($_GET["check"]))
                                  echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! A necessary field has not been completed!!!</b></p>';
-                            // else
-                            // if (isset($_GET["name"]))
-                            //      echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! First name or last name was wrong!!!</b></p>';
+                            else
+                            if (isset($_GET["name"]))
+                                 echo '<p style="text-align: center;color: red;font-size: 1.5rem;"><b>Upsss!!! First name or last name was wrong!!!</b></p>';
                              ?>
                         </form>
                 </div>
