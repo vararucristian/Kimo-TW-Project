@@ -10,15 +10,16 @@ if(mysqli_connect_errno()){
 function login($user, $pass){
     GLOBAL $conn;
 
+    $criptare = md5($pass);
     $sql = 'select * from accounts where username = ? and password = ?';
     $rezultat = $conn->prepare($sql);
-    $rezultat->bind_param('ss', $user, $pass);
+    $rezultat->bind_param('ss', $user, $criptare);
     $rezultat->execute();
     $rez = $rezultat->get_result();
     $rezultat->close();
 
     if($rez->num_rows === 1){
-        return new User($user, $pass);
+        return new User($user, $criptare);
     }
     else{
         return NULL;

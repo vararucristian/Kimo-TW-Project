@@ -47,7 +47,7 @@ main :nth-child(even){
 main form:hover{
     background-color: #336699;
 }
-main a div:hover{
+main a:hover{
     background-color: #336699;
 }
  
@@ -231,6 +231,13 @@ nav ul li img{
     width: 70%;
     border-radius: 50%;
 }
+.modal__save{
+    color:#fff;
+    text-decoration: none;
+    position:absolute;
+    top:1rem;
+    right:5rem;
+  }
 @media screen and (max-width: 760px){
     nav ul{
         display:none;
