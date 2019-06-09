@@ -122,6 +122,13 @@
       
       ?>
       </div>
+      <script type="application/javascript">
+const trateazaEveniment = ev => {
+	window.alert("daaaa");
+	
+};
+document.addEventListener ('harta', trateazaEveniment);
+</script>
     </div>
   </main>
   <footer>
