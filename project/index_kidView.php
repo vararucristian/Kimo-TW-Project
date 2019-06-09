@@ -86,7 +86,7 @@
           <ul>
           <?php
               foreach ($closePersonsController->getClosePersons() as $closePersons)
-                  echo "<li>" .$closePersons->first_name." ".$closePersons->last_name."</a></li>"
+                  echo "<li>" .$closePersons->first_name." ".$closePersons->last_name."</a></li>";
             ?> 
             <li><a href="#modal" class="modal-trigger">Add new person</a></li>
           </ul>
@@ -114,7 +114,16 @@
       <div id="dataprofile"><img src="<?php echo $kid->picture; ?>" alt="boy">
         <div id="name"> <?php echo $kid->first_name." ".$kid->last_name; ?></div>
       </div>
-      <div class="map"><img src="images/Capture.jpg " alt="map"></div>
+      <div class="map">
+      <?php
+      echo '<div class="mapouter"> <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" 
+      src="https://maps.google.com/maps?q='.$position["latitude"].'%20'.$position["longitude"].'&t=&z=13&ie=UTF8&iwloc=&output=embed" 
+      frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+        </div> <style> .mapouter { position: relative; text-align: right; height: 100%; width:100%; } 
+        .gmap_canvas { overflow: hidden; background: none !important; height: 500px; width: 100%; } </style></div>'
+      
+      ?>
+      </div>
     </div>
   </main>
   <footer>

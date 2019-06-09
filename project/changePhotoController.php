@@ -1,17 +1,18 @@
 <?php
-include "index_kidController.php";
+include "changePhotoModel.php";
+
 class ChangePhotoController{
     public $image;
-    public $ext;
-function __construct(){
+    function __construct(){
     $this->image=pathinfo($_FILES['photo']['name']);
-    $this->ext = $this->image['extension'];
+    
 }
 
 }
 $photo = new ChangePhotoController();
-$newname = "2.".$photo->ext; 
-$folder='kidsPictures/'.$newname;
-move_uploaded_file( $_FILES['photo']['tmp_name'], $folder);
+session_start();
+changePhoto($photo->image,$_SESSION['childId'],$_FILES['photo']['tmp_name']);
+session_abort();
+include "index_kidController.php";
 
 ?>
