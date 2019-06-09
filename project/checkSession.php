@@ -68,7 +68,7 @@ function checkLogedIn(){
     $rezultat->close();
     if ($rez->num_rows >= 1)
     {
-        header('location:index.php');
+        header('location: homeController.php');
     }
 }
 
