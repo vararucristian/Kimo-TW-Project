@@ -5,7 +5,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/images.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="styles/Message.css">
+    <link rel="stylesheet" type="text/css" href="styles/Message.css?v=<?php echo time(); ?>">
     <title>Kimo</title>
 </head>
 
@@ -90,15 +90,16 @@
 
     <main>
         <div id="profil">
-            <img src="images/picture145716079994.jpg" alt="kid">
+            <img src="<?php echo $messageController->getPicture($messageController->getID()); ?>" alt="kid">
             <div>
-                <p>Parent first name</p>
-                <p>Parent last name</p>
+                <h1>Hi, friend! This is my parent's name</h1>
+                <p><?php echo $messageController->getParentFirstName($messageController->getID()) ?></p>
+                <p><?php echo $messageController->getParentLastName($messageController->getID()) ?></p>
             </div>
         </div>
         <div id="chat">
             <form>
-                <h1>Send a message to his parent</h1>
+                <h1>Here you can send a message to my parent</h1>
                 <div>
                     <textarea placeholder="Type message.." name="msg" required></textarea>
                     <button type="submit"><b>Send</b></button>
