@@ -42,7 +42,7 @@
     <ul>
       <li><img src="images/images.png" alt="logo"></li>
       <li class="KIMO">KIMO APP</li>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="homeController.php">Home</a></li>
       <li><a href="#">Notifications</a>
         <ul>
           <li>Notification 1</li>
@@ -60,7 +60,7 @@
         <li id="menu">
           <img src="images/menu-icon.png" alt="menu">
           <ul id="menu2">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="homeController.php">Home</a></li>
             <li><a href="#">Notifications</a>
               <ul>
                 <li>Notification 1</li>
