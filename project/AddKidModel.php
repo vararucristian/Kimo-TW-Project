@@ -56,10 +56,10 @@ class addKidModel{
         $rez = $rezultat->get_result();
         $rez=$rez->fetch_assoc();
         $rezultat->close();
-        
         $id=$rez["max(id)"]+1;
-        $addStmt = $this->connection -> prepare('INSERT INTO children ( first_name, last_name,genre) VALUES(?,?,?);');
-        $addStmt -> bind_param('sss',  $fname,$lname,$gender );
+        $kidImage="kidsPictures/".$id."."."jpg";
+        $addStmt = $this->connection -> prepare('INSERT INTO children ( first_name, last_name,genre,picture) VALUES(?,?,?,?);');
+        $addStmt -> bind_param('ssss',  $fname,$lname,$gender,$kidImage);
         $addStmt -> execute();
         $addStmt -> close();
         $addStmt = $this->connection -> prepare('INSERT INTO account_childs (id_account, id_child) VALUES(?,?);');
@@ -71,7 +71,41 @@ class addKidModel{
         $addStmt -> bind_param('ii', $id, $id_sensor);
         $addStmt -> execute();
         $addStmt -> close();
+        $kidImage='F:/TW/xampp\htdocs/Kimo-TW-Project/project/kidsPictures/'.$id.'.'.'jpg';
+        $this->addImage($gender,$kidImage);
     }
+
+    private function addImage($gender,$kidImage){
+        if($gender=="Boy")
+            $copied=copy('images/picture145716079994.jpg',$kidImage);
+        else
+            $copied=copy('images/clipart2755860.png',$kidImage);
+
+    }
+
+    public function addSensor($code){
+        $data=array("id"=>$code,
+                    "latitude"=>"47.56",
+                    "longitude"=>"27.56",
+                    "normal_condition"=>"1",
+                    "animal_close"=>"0",
+                    "accident"=>"0",
+                    "collision"=>"0",
+                    "another_person"=>"0",
+                    );
+        $data_string = json_encode($data);            
+        $ch = curl_init('http://localhost/Kimo-TW-Project/project/sensorAPI.php');    
+        curl_setopt($ch,CURLOPT_POST,true);                 
+        curl_setopt($ch,CURLOPT_CUSTOMREQUEST,'POST');                                                                                                                   
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);   
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                                                            
+        $result=curl_exec($ch);
+        curl_close($ch);
+        echo $result;
+
+
+    }
+
 }
 
 ?>

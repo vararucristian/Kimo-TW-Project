@@ -21,6 +21,7 @@ $kid=new indexKidController($id);
 $friendsController=new indexKidFriendsController($id);
 $closePersonsController=new ViewClosePersonsController($id);
 include "PositionController.php";
-include "index_kidView.php";
+include "AddFriendsController.php"
+// include "index_kidView.php";
 
 ?>

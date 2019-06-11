@@ -15,6 +15,7 @@ public function __construct($id){
     $this->first_name=$this->getFirstName($this->id);
     $this->last_name=$this->getLastName($this->id);
     $this->last_genre=$this->getgenre($this->id);
+        
 }
 
 
@@ -24,6 +25,8 @@ public function getID(){
 public function getPicture($id){
     return $this->kidModel->getPicture($id);
 }
+
+
 
 public function getFirstName($id){
     return $this->kidModel->getFirstName($id);

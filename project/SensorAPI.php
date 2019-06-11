@@ -42,14 +42,14 @@ class SensorApi{
     function post_method(){
         try{
         $data = json_decode(file_get_contents('php://input'), true);
-        $params=array("latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
+        $params=array("id","latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
         foreach($params as $param){
             if (!array_key_exists ($param,$data ))        
                 throw new Exception("Necessary parameter not set!");
         }
-        $sql="insert into sensor(latitude,longitude,normal_condition,animal_close,accident,collision,another_person) values (?,?,?,?,?,?,?)";
+        $sql="insert into sensor(id,latitude,longitude,normal_condition,animal_close,accident,collision,another_person) values (?,?,?,?,?,?,?,?)";
         $stmt=$this->connection->prepare($sql);
-        $stmt->bind_param("ddiiiii",$data["latitude"],$data["longitude"],$data["normal_condition"],$data["animal_close"],$data["accident"],$data["collision"],$data["another_person"]);
+        $stmt->bind_param("iddiiiii",$data["id"],$data["latitude"],$data["longitude"],$data["normal_condition"],$data["animal_close"],$data["accident"],$data["collision"],$data["another_person"]);
         $stmt->execute();
         $result =array("message"=>"succes");
         header('Content-type:application/json;charset=utf-8');
@@ -68,7 +68,7 @@ class SensorApi{
 
     function put_method(){
         try{
-
+            
             $data = json_decode(file_get_contents('php://input'), true);
             if( !isset($_GET["id"]))
                 throw new Exception("Necessary parameter not set!");
@@ -96,24 +96,18 @@ class SensorApi{
 
     function get_method(){
         try{
-        if(!isset($_GET['id']))
-            throw new Exception('Unset parameter!');
-        
-            
-        $id=$_GET["id"];     
-        $sql = "SELECT * FROM sensor where id=?";
-        $stmt=$this->connection->prepare($sql);
-        $stmt->bind_param("i",$id);
-        $stmt->execute();
-        $result=array();
-        $stmt->bind_result($id,$result["latitude"],$result["longitude"],$result["normal_condition"],$result["animal_close"],$result["accident"],$result["collision"],$result["another_person"]);
-        $stmt->fetch();    
-        if($result ==null)
-            throw new Exception('Not Found!');
-        header('Content-type:application/json;charset=utf-8');
-        http_response_code(200);
-        echo json_encode($result);
-        
+            if(!isset($_GET['id']))
+                if(!isset($_GET['latitude']) or !isset($_GET['longitude']))  
+                    throw new Exception('Unset parameter!');
+             if(isset($_GET['id']))
+                {$this->getById();
+                    return;
+                }
+             if(isset($_GET['latitude']) and isset($_GET['longitude']))
+             {
+                 $this->getByLocation();
+                 return;
+             }   
         }catch(Exception $e){
             $result =array("message"=>$e->getMessage());
             header('Content-type:application/json;charset=utf-8');
@@ -122,13 +116,53 @@ class SensorApi{
             if($e->getMessage()=='Not Found!')
                 http_response_code(404);    
             echo json_encode($result);            
-            
+    
+}
+}
+    function getById(){
+        {    
+            $id=$_GET["id"];     
+            $sql = "SELECT * FROM sensor where id=?";
+            $stmt=$this->connection->prepare($sql);
+            $stmt->bind_param("i",$id);
+            $stmt->execute();
+            $result=array();
+            $stmt->bind_result($id,$result["latitude"],$result["longitude"],$result["normal_condition"],$result["animal_close"],$result["accident"],$result["collision"],$result["another_person"]);
+            $stmt->fetch();    
+            if($result ==null)
+                throw new Exception('Not Found!');
+            header('Content-type:application/json;charset=utf-8');
+            http_response_code(200);
+            echo json_encode($result);
+    
         }
-
+    
     }
 
-}
+    function getByLocation(){
+    
+        $sql = "SELECT id FROM sensor where cast(latitude as char)=? and cast(longitude as char)=?";
+        $stmt=$this->connection->prepare($sql);
+        $stmt->bind_param("dd",$_GET['latitude'],$_GET['longitude']);
+        $stmt->execute();
+         $stmt->bind_result($friends);
+         $result=array();
+         $index=0;
+         while($stmt->fetch()){
+            $stmt->bind_result($friends);
+            if($friends!=null)
+                {$result["code".$index]=$friends;
+                $index++;
+                }
+        }
+        if($result ==null)
+                throw new Exception('Not Found!');
+            header('Content-type:application/json;charset=utf-8');
+            http_response_code(200);
+            echo json_encode($result);
 
+    }
+}
 $sensorApi=new SensorApi();
 
 ?>
