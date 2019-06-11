@@ -83,6 +83,29 @@ class addKidModel{
 
     }
 
+    public function addSensor($code){
+        $data=array("id"=>$code,
+                    "latitude"=>"47.56",
+                    "longitude"=>"27.56",
+                    "normal_condition"=>"1",
+                    "animal_close"=>"0",
+                    "accident"=>"0",
+                    "collision"=>"0",
+                    "another_person"=>"0",
+                    );
+        $data_string = json_encode($data);            
+        $ch = curl_init('http://localhost/Kimo-TW-Project/project/sensorAPI.php');    
+        curl_setopt($ch,CURLOPT_POST,true);                 
+        curl_setopt($ch,CURLOPT_CUSTOMREQUEST,'POST');                                                                                                                   
+        curl_setopt($ch, CURLOPT_POSTFIELDS, $data_string);   
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);                                                                                                            
+        $result=curl_exec($ch);
+        curl_close($ch);
+        echo $result;
+
+
+    }
+
 }
 
 ?>

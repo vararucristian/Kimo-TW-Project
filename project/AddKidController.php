@@ -24,6 +24,7 @@ class AddKid{
                 $this->correctSensor=false;
         }
         $this->model->addKid($_POST["fname"],$_POST["lname"],$_POST["code"],$_POST["gender"],$this->id);
+        $this->model->addSensor($_POST["code"]);
 
     }
     

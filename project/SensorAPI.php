@@ -42,14 +42,14 @@ class SensorApi{
     function post_method(){
         try{
         $data = json_decode(file_get_contents('php://input'), true);
-        $params=array("latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
+        $params=array("id","latitude","longitude","normal_condition","animal_close","accident","collision","another_person");
         foreach($params as $param){
             if (!array_key_exists ($param,$data ))        
                 throw new Exception("Necessary parameter not set!");
         }
-        $sql="insert into sensor(latitude,longitude,normal_condition,animal_close,accident,collision,another_person) values (?,?,?,?,?,?,?)";
+        $sql="insert into sensor(id,latitude,longitude,normal_condition,animal_close,accident,collision,another_person) values (?,?,?,?,?,?,?,?)";
         $stmt=$this->connection->prepare($sql);
-        $stmt->bind_param("ddiiiii",$data["latitude"],$data["longitude"],$data["normal_condition"],$data["animal_close"],$data["accident"],$data["collision"],$data["another_person"]);
+        $stmt->bind_param("iddiiiii",$data["id"],$data["latitude"],$data["longitude"],$data["normal_condition"],$data["animal_close"],$data["accident"],$data["collision"],$data["another_person"]);
         $stmt->execute();
         $result =array("message"=>"succes");
         header('Content-type:application/json;charset=utf-8');
@@ -68,7 +68,7 @@ class SensorApi{
 
     function put_method(){
         try{
-
+            
             $data = json_decode(file_get_contents('php://input'), true);
             if( !isset($_GET["id"]))
                 throw new Exception("Necessary parameter not set!");
