@@ -58,4 +58,5 @@ ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_location) REFERE
 
 
 CREATE TABLE `project`.`sensor_codes` ( `id` INT NOT NULL AUTO_INCREMENT , `value` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB
+CREATE TABLE `project`.`kids_sensor` ( `id_kid` INT NOT NULL , `id_sensor` INT NOT NULL ) ENGINE = InnoDB;
 

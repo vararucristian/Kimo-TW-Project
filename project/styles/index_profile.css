@@ -12,6 +12,7 @@ nav ul:hover ul li a{
 color:red;
 font-size:16px;
 }
+
 .KIMO{
     font-family: inherit;
     font-size: 20px;
@@ -20,16 +21,22 @@ font-size:16px;
 }
 
 main{
-    margin-top:0;
+    margin-top:0%;
     display: grid;
     padding-left:10%;
     padding-right:10%;
     grid-template-columns: 20% 80%;
     padding-top:0px;
     background-color:rgba(0, 0, 0, 0.7); 
-    min-height: 600px;
+    min-height: 700px;
 }
-
+.modal__save{
+    color:#fff;
+    text-decoration: none;
+    position:absolute;
+    top:1rem;
+    right:5rem;
+  }
 .kids{
     background-color: #336699ad;
     display: grid;
@@ -45,15 +52,18 @@ main{
 
 }
 
-.kids div:hover{
+.kids form:hover{
+    background-color:#4b545f;
+}
+.kids a:hover{
     background-color:#4b545f;
 }
 a{
     text-decoration: none;
 }
-a div{
+.kids form{
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 20% 80%;
     align-items: center;
     color:black;
     align-content: center;
@@ -64,7 +74,25 @@ a div{
     margin: 3%;
     margin-left: 10%;
 }
-.Kidimage
+.kids #add{
+    display: grid;
+    grid-template-columns: 20% 80%;
+    align-items: center;
+    color:black;
+    align-content: center;
+    text-align: center;
+    font-weight: bold;
+    font-family: inherit;
+    max-width: 100%;
+    margin: 3%;
+    margin-left: 10%;
+}
+.kids a img
+{
+    max-width: 100%;
+    height: 50px;
+}
+.kids form img
 {
     max-width: 100%;
     height: 50px;
@@ -174,7 +202,7 @@ a div{
       width: 50%;
       align-self: center;
   }
-form img{
+#form1 img{
     width: 5%;
 }
 #form2{
@@ -473,7 +501,7 @@ nav nav ul{
 .kids{  
     padding-top:50px;
     
- align-content: space-between;
+    vertical-align: baseline;
 }
 
     }
@@ -481,8 +509,9 @@ nav nav ul{
 .kids{  
     padding-top:50px;
     padding-bottom: 0;    
- align-content: space-between;
+    vertical-align: baseline;
 }
+
 
 main{
     grid-template-columns: 40% 60%;

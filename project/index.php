@@ -150,6 +150,7 @@
                                 <div id="gen">
                                     <input type="radio" class="gender" placeholder="Girl" name="gender" value="Girl">Girl
                                     <input type="radio" class="gender" placeholder="Boy" name="gender" value="Boy">Boy</div>
+                                    <input type="hidden" name="location" value="home" />
                             <!-- </div>
                             <div id="addphoto">
                                 Add a photo with your child:
