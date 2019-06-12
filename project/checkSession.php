@@ -6,7 +6,6 @@ function genToken($id){
         $_SESSION['user_token']=md5(uniqid());
         insertToken($id);
     }else{
-        
         $sql="select * from account_tokens natural join tokens where id_account=? and value=?";
         $rezultat = $conn->prepare($sql);
         $rezultat->bind_param('is', $id,$_SESSION['user_token']);

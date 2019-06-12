@@ -32,6 +32,9 @@ ADD FOREIGN KEY (id_kid1) REFERENCES children(id)
 --
 ALTER TABLE friends
 ADD FOREIGN KEY (id_kid2) REFERENCES children(id);
+
+--
+ALTER TABLE friends ADD CONSTRAINT UNIQUE(id_kid1,id_kid2)
 ----------------------------
 tokens
 ----------------------------
@@ -62,3 +65,8 @@ CREATE TABLE `project`.`account_messages` ( `id_message` INT NOT NULL , `id_send
 ALTER TABLE account_messages add CONSTRAINT FOREIGN KEY(id_message) REFERENCES messages(id)
 ALTER TABLE account_messages add CONSTRAINT FOREIGN KEY(id_sendBy) REFERENCES accounts(id)
 ALTER TABLE account_messages add CONSTRAINT FOREIGN KEY(id_sendTo) REFERENCES accounts(id)
+----------------------------
+
+CREATE TABLE `project`.`sensor_codes` ( `id` INT NOT NULL AUTO_INCREMENT , `value` VARCHAR(50) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB
+CREATE TABLE `project`.`kids_sensor` ( `id_kid` INT NOT NULL , `id_sensor` INT NOT NULL ) ENGINE = InnoDB;
+

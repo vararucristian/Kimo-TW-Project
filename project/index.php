@@ -55,7 +55,7 @@
                     <li>Notification 5</li>
                 </ul>
             </li>
-            <li><a href="index_profile.html">My Account</a></li>
+            <li><a href="profileController.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -73,7 +73,7 @@
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="index_profile.html">My Account</a></li>
+                        <li><a href="profileController.php">My Account</a></li>
                         <li><form method="POST" action="logout.php"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>
@@ -150,6 +150,7 @@
                                 <div id="gen">
                                     <input type="radio" class="gender" placeholder="Girl" name="gender" value="Girl">Girl
                                     <input type="radio" class="gender" placeholder="Boy" name="gender" value="Boy">Boy</div>
+                                    <input type="hidden" name="location" value="home" />
                             <!-- </div>
                             <div id="addphoto">
                                 Add a photo with your child:
