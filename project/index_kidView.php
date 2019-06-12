@@ -140,21 +140,30 @@
       </div>
       <div class="map">
       <?php
-      echo '<div class="mapouter"> <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" 
+      echo '<div class="mapouter" id="mapouter"> <div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" 
       src="https://maps.google.com/maps?q='.$position["latitude"].'%20'.$position["longitude"].'&t=&z=13&ie=UTF8&iwloc=&output=embed" 
       frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe>
         </div> <style> .mapouter { position: relative; text-align: right; height: 100%; width:100%; } 
-        .gmap_canvas { overflow: hidden; background: none !important; height: 500px; width: 100%; } </style></div>'
+        .gmap_canvas { overflow: hidden; background: none !important; height: 500px; w1idth: 100%; } </style></div>'
       
       ?>
       </div>
       <script type="application/javascript">
-const trateazaEveniment = ev => {
-	window.alert("daaaa");
-	
-};
-document.addEventListener ('harta', trateazaEveniment);
-</script>
+        var data="";
+        window.setInterval(function(){ xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(data===this.responseText)
+                    return ;
+                data=this.responseText;    
+                var json=JSON.parse(this.responseText);
+                document.getElementById("mapouter").innerHTML ='<div class="gmap_canvas"><iframe width="100%" height="100%" id="gmap_canvas" src="https://maps.google.com/maps?q='+json.latitude+'%20'+json.longitude+'&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div> <style> .mapouter { position: relative; text-align: right; height: 100%; width:100%; }.gmap_canvas { overflow: hidden; background: none !important; height: 500px; w1idth: 100%; } </style>';
+                console.log("am facut update la harta!");
+                   }
+        };
+        xmlhttp.open("GET", "http://localhost/Kimo-TW-Project/project/sensorApi.php?id="+<?php echo $_SESSION['childId']?>, true);
+        xmlhttp.send();},1000)
+      </script>
     </div>
   </main>
   <footer>
