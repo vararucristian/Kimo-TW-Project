@@ -26,9 +26,10 @@ class AddKid{
             if($this->model->checkSensor( $_POST["code"])==true )
                 $this->correctSensor=false;
         }
-        if($this->checkData==true and $this->correctName==true and $this->correctSensor==true)
+        if($this->checkData==true and $this->correctName==true and $this->correctSensor==true){
         $this->model->addKid($_POST["fname"],$_POST["lname"],$_POST["code"],$_POST["gender"],$this->id);
-
+        $this->model->addSensor($_POST["code"]);    
+    }
     }
     
 

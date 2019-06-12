@@ -13,15 +13,17 @@ catch(Exception $e){
 if (!isset($_SESSION['childId'])){
     if(!isset($_POST["childId"]))
         header('location:homeController.php');
-   $_SESSION['childId']=$_POST["childId"];
-}
    
+}
+if(isset($_POST["childId"]))
+    $_SESSION['childId']=$_POST["childId"];
+
 $id=$_SESSION['childId'];
 $kid=new indexKidController($id);
 $friendsController=new indexKidFriendsController($id);
 $closePersonsController=new ViewClosePersonsController($id);
 include "PositionController.php";
-include "AddFriendsController.php"
-// include "index_kidView.php";
+include "AddFriendsController.php";
+include "index_kidView.php";
 
 ?>

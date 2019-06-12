@@ -49,7 +49,7 @@
         <ul>
             <li><img src="images/images.png" alt="logo"></li>
             <li class="KIMO">KIMO APP</li>
-            <li><a href="index.html">Home</a></li>
+            <li><a href="homeController.php">Home</a></li>
             <li><a href="#">Notifications</a>
                 <ul>
                     <li>Notification 1</li>
@@ -59,7 +59,7 @@
                     <li>Notification 5</li>
                 </ul>
             </li>
-            <li><a href="index_profile.html">My Account</a></li>
+            <li><a href="ProfileController.php">My Account</a></li>
             <li><form method="POST" action="logout.php" class="logout"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -67,7 +67,7 @@
                 <li id="menu">
                     <img src="images/menu-icon.png" alt="menu">
                     <ul id="menu2">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="homeController.php">Home</a></li>
                         <li><a href="#">Notifications</a>
                             <ul>
                                 <li>Notification 1</li>
@@ -77,7 +77,7 @@
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="index_profile.html">My Account</a></li>
+                        <li><a href="ProfileController.php">My Account</a></li>
                         <li><form method="POST" action="logout.php" class="logout"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>

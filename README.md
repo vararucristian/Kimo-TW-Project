@@ -32,6 +32,9 @@ ADD FOREIGN KEY (id_kid1) REFERENCES children(id)
 --
 ALTER TABLE friends
 ADD FOREIGN KEY (id_kid2) REFERENCES children(id);
+
+--
+ALTER TABLE friends ADD CONSTRAINT UNIQUE(id_kid1,id_kid2)
 ----------------------------
 tokens
 ----------------------------

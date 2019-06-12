@@ -27,7 +27,30 @@
     }
 }
 
+.button1 {
+    border:none;
+    background: none;
+    text-align: center;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: bold;
+    color:black;
+    text-decoration: none;
+    display: block; padding: 5% 5%;
+    margin-left: 25%;
+    outline: none;
+}
 
+.button1:hover{
+    color: #fff;
+}
+
+@media screen and (max-width: 760px){
+    .button1{
+        color:#fff;
+        margin-left:30%;
+    }
+}
 </style>
 
 <head>
@@ -44,7 +67,7 @@
     <ul>
       <li><img src="images/images.png" alt="logo"></li>
       <li class="KIMO">KIMO APP</li>
-      <li><a href="index.html">Home</a></li>
+      <li><a href="homeController.php">Home</a></li>
       <li><a href="#">Notifications</a>
         <ul>
           <li><a href="#modal3" class="modal-trigger" >Notification 1</a></li>
@@ -55,14 +78,14 @@
         </ul>
       </li>
       <li><a href="">My Account</a></li>
-      <li><a href="index_login.html">Log Out</a></li>
+      <li><form method="POST" action="logout.php"><input  class="button1" type="submit" name="logout" value="Log Out" ></form></li>
     </ul>
     <nav>
       <ul>
         <li id="menu">
           <img src="images/menu-icon.png" alt="menu">
           <ul id="menu2">
-            <li><a href="index.html">Home</a></li>
+            <li><a href="homeController.php">Home</a></li>
             <li><a href="#">Notifications</a>
               <ul>
                 <li>Notification 1</li>
@@ -73,7 +96,7 @@
               </ul>
             </li>
             <li><a href="#">My Account</a></li>
-            <li><a href="index_login.html">Log Out</a></li>
+            <li><form method="POST" action="logout.php"><input  class="button1" type="submit" name="logout" value="Log Out" ></form></li>
           </ul>
         </li>
         <li><img src="images/images.png" alt="logo"></li>

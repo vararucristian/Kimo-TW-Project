@@ -58,8 +58,8 @@ class addKidModel{
         $rezultat->close();
         $id=$rez["max(id)"]+1;
         $kidImage="kidsPictures/".$id."."."jpg";
-        $addStmt = $this->connection -> prepare('INSERT INTO children ( first_name, last_name,genre,picture) VALUES(?,?,?,?);');
-        $addStmt -> bind_param('ssss',  $fname,$lname,$gender,$kidImage);
+        $addStmt = $this->connection -> prepare('INSERT INTO children (id, first_name, last_name,genre,picture) VALUES(?,?,?,?,?);');
+        $addStmt -> bind_param('issss',  $id,$fname,$lname,$gender,$kidImage);
         $addStmt -> execute();
         $addStmt -> close();
         $addStmt = $this->connection -> prepare('INSERT INTO account_childs (id_account, id_child) VALUES(?,?);');

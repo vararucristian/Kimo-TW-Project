@@ -1,7 +1,7 @@
 <?php
 include "AddFriendsModel.php";
 
-$addFriends = new AddFriendsModel($position['latitude'],$position['longitude']);
+$addFriends = new AddFriendsModel($_SESSION['childId'],$position['latitude'],$position['longitude']);
 
 
 

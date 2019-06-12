@@ -55,7 +55,7 @@
                     <li>Notification 5</li>
                 </ul>
             </li>
-            <li><a href="index_profile.html">My Account</a></li>
+            <li><a href="profileController.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -73,7 +73,7 @@
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="index_profile.html">My Account</a></li>
+                        <li><a href="profileController.php">My Account</a></li>
                         <li><form method="POST" action="logout.php"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>
