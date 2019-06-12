@@ -13,8 +13,11 @@ class messageController{
         session_start();
         checkToken();
         $this->idAccount = $_SESSION['sessionID'];
-        $this->friendID = $_SESSION['friendID'];
+        $this->friendID = $_POST['friendId'];
         $this->model = new messageModel();
+        if(isset($_POST['Send'])){
+            $this->model->addMessage($_POST['msg'], $this->idAccount, $this->getParentID($this->friendID));
+        }
     }
 
 
@@ -32,6 +35,10 @@ class messageController{
 
     public function getParentLastName($friendID){
         return $this->model->getParentLastName($friendID);
+    }
+
+    public function getParentID($friendID){
+        return $this->model->getParentID($friendID);
     }
 }
 

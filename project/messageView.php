@@ -97,12 +97,12 @@
                 <p><?php echo $messageController->getParentLastName($messageController->getID()) ?></p>
             </div>
         </div>
-        <div id="chat">
-            <form>
+        <div id="chat" action="messageController.php">
+            <form method="POST" action="messageController.php">
                 <h1>Here you can send a message to my parent</h1>
                 <div>
                     <textarea placeholder="Type message.." name="msg" required></textarea>
-                    <button type="submit"><b>Send</b></button>
+                    <button type="submit" name="Send"><b>Send</b></button>
                 </div>
             </form>
         </div>
@@ -130,6 +130,9 @@
 
         </div>
     </footer>
+
+
+
 </body>
 
 </html>

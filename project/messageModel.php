@@ -39,6 +39,40 @@ class messageModel{
         $stmt->fetch();    
         return $name;
     }
+
+    public function getParentID($id){
+        $sql = "select accounts.id from accounts join account_childs on accounts.id = account_childs.id_account where id_child=?";
+        $stmt=$this->connection->prepare($sql);
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $stmt->bind_result($name);
+        $stmt->fetch();    
+        return $name;
+    }
+
+    public function addMessage($message, $id_sendBy, $id_sendTo){
+        $sql="insert into messages(message,date) values(?,?);";
+        $rezultat = $this->connection->prepare($sql);
+        $data = date("Y-m-d h:i A");
+        $rezultat->bind_param('ss',$message, $data);
+        $rezultat->execute();
+        $rezultat->close();
+
+        $sql="select id from messages where message = ? and date = ?";
+        $rezultat = $this->connection->prepare($sql);
+        $rezultat->bind_param('ss',$message, $data);
+        $rezultat->execute();
+        $rez = $rezultat->get_result();
+        $rez=$rez->fetch_assoc();
+        $rezultat->close();
+        $id_message=$rez['id'];
+
+        $sql="insert into account_messages values(?,?,?);";
+        $rezultat = $this->connection->prepare($sql);
+        $rezultat->bind_param('iii',$id_message, $id_sendBy, $id_sendTo);
+        $rezultat->execute();
+        $rezultat->close();
+    }
 }
 
 ?>
