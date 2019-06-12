@@ -55,3 +55,10 @@ CREATE TABLE `project`.`close_person_location` ( `id_close_person` INT NOT NULL 
 ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_close_person) REFERENCES close_persons(id)
 ALTER TABLE close_person_location ADD CONSTRAINT FOREIGN KEY(id_location) REFERENCES locations(id)
 ----------------------------
+
+CREATE TABLE `project`.`messages` ( `id` INT NOT NULL AUTO_INCREMENT , `message` TEXT NOT NULL , `date` DATETIME NOT NULL , `seen` INT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+CREATE TABLE `project`.`account_messages` ( `id_message` INT NOT NULL , `id_sendBy` INT NOT NULL , `id_sendTo` INT NOT NULL ) ENGINE = InnoDB;
+
+ALTER TABLE account_messages add CONSTRAINT FOREIGN KEY(id_message) REFERENCES messages(id)
+ALTER TABLE account_messages add CONSTRAINT FOREIGN KEY(id_sendBy) REFERENCES accounts(id)
+ALTER TABLE account_messages add CONSTRAINT FOREIGN KEY(id_sendTo) REFERENCES accounts(id)
