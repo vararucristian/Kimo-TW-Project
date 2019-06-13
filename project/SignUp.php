@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+      include "controllerSignUp.php";
+?>
 <html lang="en">
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="images/images.png">
@@ -9,7 +12,7 @@
 </head>
 <body>
     <main>
-        <form  action="controllerSignUp.php" method="POST">
+        <form  action="SignUp.php" method="POST">
             <div id="Logo">
                 <img src="images/images.png" alt="Logo">
                 <h1 id="KIMO">KIMO APP</h1>
@@ -54,25 +57,25 @@
            <input type="submit"  name="butonSignUp" id="butonSignUp" value="Sign up">
            <?php
                 $error="";
-               if ($empty_field==false)
+               if ($controllerSignUp->empty_field==false)
                     echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> All the fields has to be completed! Please, try again!</b></p>';
                     else
-                        if ($incorrect_name==true)
+                        if ($controllerSignUp->incorrect_name==true)
                          echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> First name and last name only contains letters startig with [A-Z]! Please, try again!</b></p>';
                         else
-                        if ($incorrect_data==true)
+                        if ($controllerSignUp->incorrect_data==true)
                         echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Latidude or longitude incorrect! Please, try again!</b></p>';
                         else
-                          if ($short_password==true)
+                          if ($controllerSignUp->short_password==true)
                             echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password too short! Please, try again!</b></p>';
                             else
-                            if ($easy_password==true)
+                            if ($controllerSignUp->easy_password==true)
                                 echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Password not safe! Please, try again!</b></p>';
                                 else
-                               if ($different_passwords==true)
+                               if ($controllerSignUp->different_passwords==true)
                                 echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Incorrect password confirmation! Please, try again!</b></p>';
                                 else
-                                    if ($username_used==true)
+                                    if ($controllerSignUp->username_used==true)
                                         echo '<p style="margin-left: 0%;text-align: center;color: darkred;font-size: 1.5rem;"><b> Username is already used! Please, try again!</b></p>';
                                         
                ?>

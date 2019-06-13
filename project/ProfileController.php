@@ -67,5 +67,5 @@ public function getEmail(){
 
 }
 $profile=new profileController();
-include "index_profile.php";
+
 ?>

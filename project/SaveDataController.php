@@ -57,23 +57,23 @@ class SaveData{
 $data=new SaveData();
 if ($data->correctfName==false)
 {   
-header("location:profileController.php?fname=false#modal");
+header("location:index_profile.php?fname=false#modal");
 }
 else
 if ($data->correctlName==false)
 {   
-header("location:profileController.php?lname=false#modal");
+header("location:index_profile.php?lname=false#modal");
 }
 else
 if ($data->correctCoordinates==false)
 {   
-header("location:profileController.php?coord=false#modal");
+header("location:index_profile.php?coord=false#modal");
 }
 else
 if ($data->incompleteData==true)
 {   
-header("location:profileController.php?compl=false#modal");
+header("location:index_profile.php?compl=false#modal");
 }
 else
-header( "location: profileController.php");
+header( "location: index_profile.php");
 ?>

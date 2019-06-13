@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include "messageController.php";
+?>
 <html lang="en">
 
 <head>
@@ -49,7 +52,7 @@
         <ul>
             <li><img src="images/images.png" alt="logo"></li>
             <li class="KIMO">KIMO APP</li>
-            <li><a href="homeController.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">Notifications</a>
                 <ul>
                     <li>Notification 1</li>
@@ -59,7 +62,7 @@
                     <li>Notification 5</li>
                 </ul>
             </li>
-            <li><a href="ProfileController.php">My Account</a></li>
+            <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php" class="logout"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -67,7 +70,7 @@
                 <li id="menu">
                     <img src="images/menu-icon.png" alt="menu">
                     <ul id="menu2">
-                        <li><a href="homeController.php">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="#">Notifications</a>
                             <ul>
                                 <li>Notification 1</li>
@@ -77,7 +80,7 @@
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="ProfileController.php">My Account</a></li>
+                        <li><a href="index_profile.php">My Account</a></li>
                         <li><form method="POST" action="logout.php" class="logout"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>
@@ -97,8 +100,8 @@
                 <p><?php echo $messageController->getParentLastName($messageController->getID()) ?></p>
             </div>
         </div>
-        <div id="chat" action="messageController.php">
-            <form method="POST" action="messageController.php">
+        <div id="chat" action="messageView.php">
+            <form method="POST" action="messageView.php">
                 <h1>Here you can send a message to my parent</h1>
                 <div>
                     <textarea placeholder="Type message.." name="msg" required></textarea>

@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+
+include "index_kidController.php";
+?>
 <html>
 
 <head>
@@ -66,7 +70,7 @@
     <ul>
       <li><img src="images/images.png" alt="logo"></li>
       <li class="KIMO">KIMO APP</li>
-      <li><a href="homeController.php">Home</a></li>
+      <li><a href="index.php">Home</a></li>
       <li><a href="#">Notifications</a>
         <ul>
           <li>Notification 1</li>
@@ -76,7 +80,7 @@
           <li>Notification 5</li>
         </ul>
       </li>
-      <li><a href="ProfileController.php">My Account</a></li>
+      <li><a href="index_profile.php">My Account</a></li>
       <li><form method="POST" action="logout.php"><input  class="button1" type="submit" name="logout" value="Log Out" ></form></li>
     </ul>
     <nav>
@@ -84,7 +88,7 @@
         <li id="menu">
           <img src="images/menu-icon.png" alt="menu">
           <ul id="menu2">
-            <li><a href="homeController.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">Notifications</a>
               <ul>
                 <li>Notification 1</li>
@@ -94,7 +98,7 @@
                 <li>Notification 5</li>
               </ul>
             </li>
-            <li><a href="ProfileController.php">My Account</a></li>
+            <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button1" type="submit" name="logout" value="Log Out" ></form></li>
           </ul>
         </li>
@@ -121,7 +125,7 @@
           <ul>
             <?php
               foreach ($friendsController->friends as $friend){
-                  echo "<form method=\"POST\" action=\"messageController.php\"><input class=\"button\" name=\"choose\" type=\"submit\" value =".$friend->first_name."&nbsp;&nbsp;".$friend->last_name.">";
+                  echo "<form method=\"POST\" action=\"messageView.php\"><input class=\"button\" name=\"choose\" type=\"submit\" value =".$friend->first_name."&nbsp;&nbsp;".$friend->last_name.">";
                   echo "<input type=\"hidden\" name=\"friendId\" value=\"".$friend->getID()."\" /></form>";
                   // $_SESSION['friendID'] = $friend->getID();
               }
@@ -190,7 +194,7 @@
         <header class="modal__header">
           <h2 class="modal__title">Change the image</h2>
           <a href="#" onclick="document.getElementById('form2').submit();" class="modal__save">Save</a>
-          <a href="index_kidController.php" class="modal__close" >X</a>
+          <a href="index_kidView.php" class="modal__close" >X</a>
         </header>
         <div class="modal__body">
           <p class="modal__text">
@@ -215,7 +219,7 @@
           <header class="modal__header">
             <h2 class="modal__title">Add a new person of interest</h2>
             <a href="#" onclick="document.getElementById('addPerson').submit();"class="modal__save" >Save</a>
-            <a href="index_kidController.php" class="modal__close" >X</a>
+            <a href="index_kidView.php" class="modal__close" >X</a>
           </header>
           <div class="modal__body">
             <p class="modal__text">

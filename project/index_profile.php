@@ -1,4 +1,8 @@
 <!DOCTYPE html>
+<?php
+include "ProfileController.php";
+?>
+
 <html>
 
 <style>
@@ -67,7 +71,7 @@
     <ul>
       <li><img src="images/images.png" alt="logo"></li>
       <li class="KIMO">KIMO APP</li>
-      <li><a href="homeController.php">Home</a></li>
+      <li><a href="index.php">Home</a></li>
       <li><a href="#">Notifications</a>
         <ul>
           <li><a href="#modal3" class="modal-trigger" >Notification 1</a></li>
@@ -85,7 +89,7 @@
         <li id="menu">
           <img src="images/menu-icon.png" alt="menu">
           <ul id="menu2">
-            <li><a href="homeController.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">Notifications</a>
               <ul>
                 <li>Notification 1</li>
@@ -110,7 +114,7 @@
       <?php
         foreach ($profile->childs as $child)
             {
-                echo "<form method=\"POST\" action=\"index_kidController.php\"><img class=\"Kidimage\" src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
+                echo "<form method=\"POST\" action=\"index_kidView.php\"><img class=\"Kidimage\" src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
                 echo "<input type=\"hidden\" name=\"childId\" value=\"".$child->getID()."\" /></form>";
              }
             ?>
@@ -157,7 +161,7 @@
         <header class="modal__header">
           <h2 class="modal__title">Change personal data</h2>
           <a href="#" onclick="document.getElementById('form1').submit();"class="modal__save" >Save</a>
-                    <a href="profileController.php" class="modal__close" >X</a>
+                    <a href="index_profile.php" class="modal__close" >X</a>
         </header>
         <div class="modal__body">
           <p class="modal__text">
@@ -207,7 +211,7 @@
                 <header class="modal__header">
                     <h2 class="modal__title">Add kid</h2>
                     <a href="#" onclick="document.getElementById('form2').submit();"class="modal__save" >Add</a>
-                    <a href="profileController.php" class="modal__close" >X</a>
+                    <a href="index_profile.php" class="modal__close" >X</a>
                 </header>
                 <div class="modal__body">
                     <p class="modal__text">

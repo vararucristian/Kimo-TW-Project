@@ -39,40 +39,40 @@ if($kid->home==true)
 {
 if ($kid->checkData==false )
         {   
-            header("location:homeController.php?check=false#modal2");
+            header("location:index.php?check=false#modal2");
         }
 
 else
 if ($kid->correctName==false)
     {   
-        header("location:homeController.php?name=false#modal2");
+        header("location:index.php?name=false#modal2");
     }
     else
 if ($kid->correctSensor==false)
     {   
-        header("location:homeController.php?sensor=false#modal2");
+        header("location:index.php?sensor=false#modal2");
     }
 else
-header( "location: homeController.php");
+header( "location: index.php");
 }
 else
 {
     if ($kid->checkData==false )
             {   
-                header("location:profileController.php?check=false#modal2");
+                header("location:index_profile.php?check=false#modal2");
             }
     
     else
     if ($kid->correctName==false)
         {   
-            header("location:profileController.php?name=false#modal2");
+            header("location:index_profile.php?name=false#modal2");
         }
         else
     if ($kid->correctSensor==false)
         {   
-            header("location:profileController.php?sensor=false#modal2");
+            header("location:index_profile.php?sensor=false#modal2");
         }
     else
-    header( "location: profileController.php");
+    header( "location: index_profile.php");
     }
 ?>
