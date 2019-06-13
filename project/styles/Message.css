@@ -1,3 +1,58 @@
+.modal__dialog{
+    display:table-cell;
+    vertical-align:middle;
+  }
+  
+  .modal__content{
+    background:rgb(255, 255, 255);
+    width:60%;
+    min-width:300px;
+    margin:auto;
+    position:relative;
+    animation: slideUp 0.3s ease-in-out;
+  }
+  
+  .modal__header{
+    background:#2980b9;
+    color:rgba(255, 255, 255, 0.8);
+    padding:1rem;
+    position:relative;
+  }
+  .modal__title{
+    margin:0;
+  }
+  .modal__close{
+    color:#fff;
+    text-decoration: none;
+    position:absolute;
+    top:1rem;
+    right:1rem;
+  }
+  
+.modal3:target{
+    display: table;
+}
+.modal3{
+    display:none;
+    background:rgba(0, 0, 0, .8);
+    position:fixed;
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+  }
+.modal3 .modal__header{
+    background:red;
+    color:rgba(255, 255, 255, 0.8);
+    padding:1rem;
+    position:relative;
+  }
+
+#situation {
+    text-align : center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
 body{
     background-image:url("images/oCvsFYI.jpg");
     margin:0;

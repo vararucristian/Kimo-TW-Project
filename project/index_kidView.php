@@ -1,3 +1,6 @@
+<?php
+include "ControllerNotifications.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -241,6 +244,22 @@
         </section>
       </div>
     </div>
+    <div class="modal3" id="modal3">
+    <div class="modal__dialog">
+      <section class="modal__content">
+        <header class="modal__header">
+          <h2 class="modal__title">Emergency situation!!!</h2>
+          <a href="" class="modal__close">X</a>
+        </header>
+        <div class="modal__body">
+          <p id="situation" class="modal__text">
+              Emergency situation!!!
+        </div>
+        <footer class="modal__footer">
+        </footer>
+      </section>
+    </div>
+  </div>
 </body>
 
 </html>

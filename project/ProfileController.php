@@ -2,6 +2,7 @@
 include "profileModel.php";
 include "kidController.php";
 include "checkSession.php";
+
 class profileController{
 
 public $profileModel;
