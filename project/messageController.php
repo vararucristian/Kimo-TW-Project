@@ -49,6 +49,6 @@ class messageController{
 }
 
 $messageController = new messageController();
-include "messageView.php";
+
 
 ?>

@@ -53,7 +53,7 @@ function checkToken(){
         $rezultat->close();
         if ($rez->num_rows<1)
             {
-                header('location:loginController.php');
+                header('location:index_login.php');
             }
 }
 
@@ -67,7 +67,7 @@ function checkLogedIn(){
     $rezultat->close();
     if ($rez->num_rows >= 1)
     {
-        header('location: homeController.php');
+        header('location: index.php');
     }
 }
 
@@ -96,6 +96,6 @@ function distroySession(){
     $rezultat->close();
         session_unset();
         session_destroy();
-        header('Location: loginController.php');
+        header('Location: index_login.php');
 }
 ?>

@@ -6,7 +6,9 @@ class addKidModel{
     private $password = "";
     private $db = "project";
     private $connection;
-    public function __construct(){
+    private $parentId;
+    public function __construct($parentId){
+        $this->parentId=$parentId;
         $this->connection= new mysqli($this->host, $this->user, $this->password, $this->db);
     }
     public function checkName($fname,$lname)
@@ -84,9 +86,10 @@ class addKidModel{
     }
 
     public function addSensor($code){
+        $parentLocation=$this->getParentLocation();
         $data=array("id"=>$code,
-                    "latitude"=>"47.56",
-                    "longitude"=>"27.56",
+                    "latitude"=>$parentLocation["latitude"],
+                    "longitude"=>$parentLocation["longitude"],
                     "normal_condition"=>"1",
                     "animal_close"=>"0",
                     "accident"=>"0",
@@ -104,6 +107,25 @@ class addKidModel{
         echo $result;
 
 
+    }
+    private function getParentLocation(){
+        $sql="select id_location from user_locations where id_user=?";
+        $rezultat = $this->connection->prepare($sql);
+        $rezultat->bind_param('i', $this->parentId);  
+        $rezultat->execute();
+        $rez = $rezultat->get_result();
+        $rez=$rez->fetch_assoc();
+        $rezultat->close();
+        $idLocation=$rez["id_location"];
+        $sql="select latitude,longitude from locations where id=?";  
+        $rezultat = $this->connection->prepare($sql);
+        $rezultat->bind_param('i', $idLocation);
+        $rezultat->execute();
+        $rez = $rezultat->get_result();
+        $rez=$rez->fetch_assoc();
+        $rezultat->close();
+        return $rez;
+        
     }
 
 }

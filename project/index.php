@@ -1,7 +1,9 @@
-
+<?php
+include "homeController.php"; 
+include "ControllerNotifications.php";
+?>
 <!DOCTYPE html>
 <html>
-
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="images/images.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -48,6 +50,7 @@
             <li><a href="#">Home</a></li>
             <li><a href="#">Notifications</a>
                 <ul>
+                    <li id="notification">Anaaaaa</li>
                     <li>Notification 1</li>
                     <li>Notification 2</li>
                     <li>Notification 3</li>
@@ -55,7 +58,7 @@
                     <li>Notification 5</li>
                 </ul>
             </li>
-            <li><a href="profileController.php">My Account</a></li>
+            <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -73,7 +76,7 @@
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="profileController.php">My Account</a></li>
+                        <li><a href="index_profile.php">My Account</a></li>
                         <li><form method="POST" action="logout.php"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>
@@ -86,14 +89,14 @@
     <main>
             
             <?php
-        
                 foreach ($homeController->childs as $child)
                   {
-                      echo "<form method=\"POST\" action=\"index_kidController.php\"><img src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
+                      echo "<form method=\"POST\" action=\"index_kidView.php\"><img src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
                       echo "<input type=\"hidden\" name=\"childId\" value=\"".$child->getID()."\" /></form>";
-                    }
 
-                  ?>
+            }
+      ?>
+    
             
         <a href="#modal2" class="modal-trigger">
             <div id="add"><img src="images/add.png" alt="add"></div>
@@ -125,7 +128,7 @@
                 <header class="modal__header">
                     <h2 class="modal__title">Add kid</h2>
                     <a href="#" onclick="document.getElementById('form2').submit();"class="modal__save" >Add</a>
-                    <a href="homeController.php" class="modal__close" >X</a>
+                    <a href="index.php" class="modal__close" >X</a>
                 </header>
                 <div class="modal__body">
                     <p class="modal__text">
@@ -172,6 +175,24 @@
             </section>
         </div>
     </div>
+
+    <div class="modal3" id="modal3">
+    <div class="modal__dialog">
+      <section class="modal__content">
+        <header class="modal__header">
+          <h2 class="modal__title">Emergency situation!!!</h2>
+          <a href="" class="modal__close">X</a>
+        </header>
+        <div class="modal__body">
+          <p id="situation" class="modal__text">
+              Emergency situation!!!
+        </div>
+        <footer class="modal__footer">
+        </footer>
+      </section>
+    </div>
+  </div>
+  
 </body>
 
 </html>

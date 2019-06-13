@@ -13,6 +13,6 @@ $photo = new ChangePhotoController();
 session_start();
 changePhoto($photo->image,$_SESSION['childId'],$_FILES['photo']['tmp_name']);
 session_abort();
-include "index_kidController.php";
+include "index_kidView.php";
 
 ?>

@@ -1,4 +1,11 @@
+<?php
+include "kidController.php";
+include "ControllerNotifications.php";
+?>
 <!DOCTYPE html>
+<?php
+include "messageController.php";
+?>
 <html lang="en">
 
 <head>
@@ -49,13 +56,13 @@
         <ul>
             <li><img src="images/images.png" alt="logo"></li>
             <li class="KIMO">KIMO APP</li>
-            <li><a href="homeController.php">Home</a></li>
+            <li><a href="index.php">Home</a></li>
             <li><a href="#">Messages</a>
                 <ul id="notification">
                    
                 </ul>
             </li>
-            <li><a href="ProfileController.php">My Account</a></li>
+            <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php" class="logout"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -63,9 +70,9 @@
                 <li id="menu">
                     <img src="images/menu-icon.png" alt="menu">
                     <ul id="menu2">
-                        <li><a href="homeController.php">Home</a></li>
+                        <li><a href="index.php">Home</a></li>
                         <li><a href="#">Messages</a>
-                            <ul id="notification">
+                            <ul>
                                 <li>Notification 1</li>
                                 <li>Notification 2</li>
                                 <li>Notification 3</li>
@@ -73,7 +80,7 @@
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="ProfileController.php">My Account</a></li>
+                        <li><a href="index_profile.php">My Account</a></li>
                         <li><form method="POST" action="logout.php" class="logout"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>
@@ -93,8 +100,8 @@
                 <p><?php echo $messageController->getParentLastName($messageController->getID()) ?></p>
             </div>
         </div>
-        <div id="chat" action="messageController.php">
-            <form method="POST" action="messageController.php">
+        <div id="chat" action="messageView.php">
+            <form method="POST" action="messageView.php">
                 <h1>Here you can send a message to my parent</h1>
                 <div>
                     <textarea placeholder="Type message.." name="msg" required></textarea>
@@ -126,9 +133,22 @@
 
         </div>
     </footer>
-
-<?php
-// include "notification.php";
+    <div class="modal3" id="modal3">
+    <div class="modal__dialog">
+      <section class="modal__content">
+        <header class="modal__header">
+          <h2 class="modal__title">Emergency situation!!!</h2>
+          <a href="" class="modal__close">X</a>
+        </header>
+        <div class="modal__body">
+          <p id="situation" class="modal__text">
+              Emergency situation!!!
+        </div>
+        <footer class="modal__footer">
+        </footer>
+      </section>
+    </div>
+  </div>
 
 // $message = json_decode(newMessages($_SESSION['sessionID']));
 

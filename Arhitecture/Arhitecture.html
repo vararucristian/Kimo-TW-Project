@@ -197,15 +197,9 @@
     <section id="C8">
         <h4> 8. Surse de date externe</h4>
         <p> <b>Sensor Kid:</b>
-            <p>Realizat ca și un microserviciu PHP cu ajutorul API REST. Microserviciul va prelua
-                datele
-                din
-                formularul senzorului folosind POST, apoi le va transmite prin PUT la un URL de forma
-                http:localhost:”port”/sensor/id-kid. Aplicația va cere în mod continuu date pentru a afla locația și
-                starea
-                copilului pentru posibile procesări. Cererea va fi de forma http:localhost:”port”/sensor/id-kid, iar
-                răspunsul
-                va fi preluat în format JSON.</p>
+            <p>Datele vor fi preluate dintr-un formular web si for fi transmise prin POST la un REST API unde vor vi stocate intr-o bază de date locală.
+                Un client, în cazul de față aplicația "KIMO", va putea afla anumite date specifice senzorului (poziție, stare) apelând acest serviciu prin metoda GET.
+            </p>
             <b>Google Map API:</b>
             <p>Pentru afișarea hărții împreună cu locația actuală a copilului se va realiza
                 o

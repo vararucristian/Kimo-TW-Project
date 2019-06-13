@@ -2,6 +2,7 @@
 include "profileModel.php";
 include "kidController.php";
 include "checkSession.php";
+
 class profileController{
 
 public $profileModel;
@@ -67,5 +68,5 @@ public function getEmail(){
 
 }
 $profile=new profileController();
-include "index_profile.php";
+
 ?>

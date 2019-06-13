@@ -18,6 +18,6 @@ public function getChilds(){
 
 }
 $homeController=new homeController();
-include "index.php";
+
 
 ?>
