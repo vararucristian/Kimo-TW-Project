@@ -12,7 +12,7 @@ class AddKid{
     function __construct(){
         session_start();
     checkToken();
-        $this->model = new addKidModel();
+        $this->model = new addKidModel($_SESSION['sessionID']);
         $this->id=$_SESSION['sessionID'];
         $this->checkData=true;
         if ($_POST["location"]=="account")
