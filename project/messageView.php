@@ -2,6 +2,9 @@
 include "messageController.php";
 include "kidController.php";
 include "ControllerNotifications.php";
+
+$_SESSION['friendId'] = $_POST['friendId'];
+$_SESSION['childId'] = $_POST['childId'];
 ?>
 <!DOCTYPE html>
 <?php
@@ -108,6 +111,8 @@ include "ControllerNotifications.php";
                     <textarea placeholder="Type message.." name="msg" required></textarea>
                     <button type="submit" name="Send"><b>Send</b></button>
                 </div>
+                <input type="hidden" name="friendId" value="<?php echo $_SESSION['friendId']?>" >
+                <input type="hidden" name="childId" value="<?php echo $_SESSION['childId']?>" >
             </form>
         </div>
     </main>
@@ -159,27 +164,24 @@ include "ControllerNotifications.php";
     var data="";
 
     function seenMessage(id){
-        // xmlhttp1 = new XMLHttpRequest();
-        // xmlhttp1.onreadystatechange = function() {
-        //     if ( this.status == 200) {
-        //         console.log("Seen message!");
-        //     }
-        // }
-        // xmlhttp1.open("PUT", "GetMessages.php?id="+id, true);
-        // xmlhttp1.send();
+        
         var xhr = new XMLHttpRequest();
-        xhr.open("PUT", "GetMessages.php?id="+id, true);
         // xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-        // xhr.onload = function () {
-        //     // var users = JSON.parse(xhr.responseText);
-        //     if ( xhr.status == "200") {
-        //         console.table("Seen message!");
-        //     } else {
-        //        return;
-        //     }
-        // }
-        xhr.send(null);
+        xhr.onload = function () {
+            
+            if ( xhr.status == "200") {
+                // var users = JSON.parse(xhr.responseText);
+                console.table("Seen message!");
+                window.location.href = "#";
+                location.reload();
+            } else {
+               return;
+            }
+        }
+        xhr.open("PUT", "GetMessages.php?id="+id, true);
+        xhr.send();
         console.log(id);
+        
     }
 
     window.setInterval(function(){ xmlhttp = new XMLHttpRequest();
@@ -191,42 +193,36 @@ include "ControllerNotifications.php";
             var json=JSON.parse(this.responseText);
             var count = Object.keys(json).length;
             var i = 0;
-            function seenMessage(id){
-        // xmlhttp1 = new XMLHttpRequest();
-        // xmlhttp1.onreadystatechange = function() {
-        //     if ( this.status == 200) {
-        //         console.log("Seen message!");
-        //     }
-        // }
-        // xmlhttp1.open("PUT", "GetMessages.php?id="+id, true);
-        // xmlhttp1.send();
-        var xhr = new XMLHttpRequest();
-        xhr.open("PUT", "GetMessages.php?id="+id, true);
-        xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
-        // xhr.onload = function () {
-        //     // var users = JSON.parse(xhr.responseText);
-        //     if ( xhr.status == "200") {
-        //         console.table("Seen message!");
-        //     } else {
-        //        return;
-        //     }
-        // }
-        xhr.send();
-    }
+            
             while(i < count){
                 
                 var node = document.createElement("P");
                 var mesaj = document.createTextNode(json[i].message);
                 node.appendChild(mesaj);
+                var node12 = document.createElement("form");
+                var att = document.createAttribute("method"); att.value = "POST"; node12.setAttributeNode(att);
+                var att1 = document.createAttribute("action"); att1.value = "messageView.php"; node12.setAttributeNode(att1);
+                var att2 = document.createAttribute("class"); att2.value = "formMessage"; node12.setAttributeNode(att2);
                 var node11 = document.createElement("INPUT");
-                var att = document.createAttribute("value"); att.value = json[i].messageId; node11.setAttributeNode(att);
+                var att = document.createAttribute("value"); att.value = json[i].childId; node11.setAttributeNode(att);
                 var att1 = document.createAttribute("type"); att1.value = "hidden"; node11.setAttributeNode(att1);
-                var att2 = document.createAttribute("name"); att2.value = "messageId"; node11.setAttributeNode(att2);
+                var att2 = document.createAttribute("name"); att2.value = "friendId"; node11.setAttributeNode(att2);
+                node12.appendChild(node11);
+                var node14 = document.createElement("INPUT");
+                var att = document.createAttribute("value"); att.value = <?php echo $_SESSION['childId']?>; node14.setAttributeNode(att);
+                var att1 = document.createAttribute("type"); att1.value = "hidden"; node14.setAttributeNode(att1);
+                var att2 = document.createAttribute("name"); att2.value = "childId"; node14.setAttributeNode(att2);
+                node12.appendChild(node14);
+                var node13 = document.createElement("INPUT");
+                var att = document.createAttribute("value"); att.value = "Replay"; node13.setAttributeNode(att);
+                var att1 = document.createAttribute("type"); att1.value = "submit"; node13.setAttributeNode(att1);
+                var att2 = document.createAttribute("class"); att2.value = "buttonReplay"; node13.setAttributeNode(att2);
+                node12.appendChild(node13);
                 var node1 = document.createElement("FORM"); 
                 var att = document.createAttribute("id"); att.value = "message_modal"; node1.setAttributeNode(att);
                 var att1 = document.createAttribute("action"); att1.value = "messageController.php"; node1.setAttributeNode(att1);
                 var att2 = document.createAttribute("method"); att2.value = "POST"; node1.setAttributeNode(att2);
-                node1.appendChild(node); node1.appendChild(node11);
+                node1.appendChild(node); node1.appendChild(node12);
                 var node2 = document.createElement("P"); 
                 var att = document.createAttribute("class"); att.value = "modal__text"; node2.setAttributeNode(att);
                 node2.appendChild(node1);
@@ -239,9 +235,8 @@ include "ControllerNotifications.php";
                 node4.appendChild(titlu);
                 var node5 = document.createElement("A"); 
                 var att = document.createAttribute("class"); att.value = "modal__close"; node5.setAttributeNode(att);
-                var att1 = document.createAttribute("href"); att1.value = "#"; node5.setAttributeNode(att1);
+                var att1 = document.createAttribute("href"); att1.value = "javascript:seenMessage("+json[i].messageId+")"; node5.setAttributeNode(att1);
                 var att10 = document.createAttribute("id"); att10.value = "closeModal"+i; node5.setAttributeNode(att10);
-                // var att2 = document.createAttribute("onclick"); att2.value = document.getElementById("message_modal").submit(); node5.setAttributeNode(att2);
                 var close = document.createTextNode("X");
                 node5.appendChild(close);
                 var node6 = document.createElement("HEADER"); 
@@ -277,43 +272,20 @@ include "ControllerNotifications.php";
                 node1.appendChild(node2);
                 document.getElementById("notification").appendChild(node1);
                 
-               
-                // var el = document.getElementsByClassName("modal__close");
-                // var att2 = document.createAttribute("onclick"); att2.value = seenMessage(json[i].messageId); el[0].setAttributeNode(att2);
 
                 i++;
             }
             console.log("new message!");
+            
                 }
      };
     xmlhttp.open("GET", "GetMessages.php", true);
     xmlhttp.send();},1000)
+    
 </script>
 
 
 
-<!-- <div class="modal4" id="modal4">
-    <div class="modal__dialog">
-      <section class="modal__content">
-        <header class="modal__header">
-          <h2 class="modal__title">Emergency situation!!!</h2>
-          <a href="#" class="modal__close">X</a>
-        </header>
-        <div class="modal__body">
-          <p class="modal__text">
-            <form id="message_modal">
-              <p>Your kid KidName is closed to a animal that might be dangerous!</p>
-            </form>
-        </div>
-        
-        <footer class="modal__footer">
-        </footer>
-      </section>
-    </div>
-  </div> -->
-<?php
-    // echo $_POST['messageId'];
-?>
 
 </body>
 

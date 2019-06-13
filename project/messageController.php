@@ -3,8 +3,8 @@
 include "messageModel.php";
 include "checkSession.php";
 session_start();
-$_SESSION['friendId'] = $_POST['friendId'];
-$_SESSION['childId'] = $_POST['childId'];
+
+// $_SESSION['childId'] = $_POST['childId'];
 class messageController{
 
     private $friendID;
@@ -16,9 +16,12 @@ class messageController{
         checkToken();
         $this->idAccount = $_SESSION['sessionID'];
         $this->friendID = $_SESSION['friendId'];
+        $this->childId = $_SESSION['childId'];
         $this->model = new messageModel();
+
         if(isset($_POST['Send'])){
-            $this->model->addMessage($_POST['msg'], $this->idAccount, $this->getParentID($this->friendID));
+            $idParent = $this->getParentID($this->friendID);
+            $this->model->addMessage($_POST['msg'], $this->idAccount, $idParent, $this->childId);
         }
     }
 

@@ -12,7 +12,7 @@ function newMessages($id){
     $messages = $stmt->get_result();
     for($i = 1; $i <= $messages->num_rows; $i++){
         $msg = $messages->fetch_assoc();
-        $newMessages[$index]=new Message($msg['id'], $msg['message'], $msg['date'], $msg['id_sendBy'], $id);
+        $newMessages[$index]=new Message($msg['id'], $msg['message'], $msg['date'], $msg['id_sendBy'], $id, $msg['child_id']);
         $index++;
     } 
    
@@ -25,13 +25,15 @@ class Message{
     public $data;
     public $sendBy;
     public $sendTo;
+    public $childId;
 
-    function __construct($id, $message, $data, $sendBy, $sendTo){
+    function __construct($id, $message, $data, $sendBy, $sendTo, $childId){
         $this -> id = $id;
         $this -> message = $message;
         $this -> data = $data;
         $this -> sendBy = $sendBy;
         $this -> sendTo = $sendTo;
+        $this -> childId = $childId;
     }
 
 }

@@ -53,15 +53,17 @@ class notificationMessages{
 
     function put_method(){
         $id = $_GET["id"];
-        $sql="update messages set seen = 1 where id=?";
-        $rezultat = $connection->prepare($sql);
-        $rezultat->bind_param('i',$id);
-        $rezultat->execute();
-        $rezultat->close();
-        $result =array("message"=>"succes");
+        $sql = "UPDATE messages SET seen=1 WHERE id=?";
+        $stmt=$this->connection->prepare($sql);
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $stmt->close();
+        $response = array();
+        $rsp['message'] = 'success';
+        array_push($response, $rsp);
         header('Content-type:application/json;charset=utf-8');
         http_response_code(200) ; 
-        echo json_encode($result);
+        echo json_encode($response);
     }
 
     function getById(){
@@ -98,6 +100,7 @@ class notificationMessages{
             $rsp['sendBy'] = $msg->sendBy;
             $rsp['sendTo'] = $msg->sendTo;
             $rsp['name'] = $result;
+            $rsp['childId'] = $msg->childId;
             array_push($response, $rsp);
         }
         header('Content-type:application/json;charset=utf-8');

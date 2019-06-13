@@ -74,13 +74,8 @@ include "ControllerNotifications.php";
       <li><img src="images/images.png" alt="logo"></li>
       <li class="KIMO">KIMO APP</li>
       <li><a href="index.php">Home</a></li>
-      <li><a href="#">Notifications</a>
-        <ul>
-          <li><a href="#modal3" class="modal-trigger" >Notification 1</a></li>
-          <li>Notification 2</li>
-          <li>Notification 3</li>
-          <li>Notification 4</li>
-          <li>Notification 5</li>
+      <li><a href="#">Messages</a>
+        <ul id="notification">
         </ul>
       </li>
       <li><a href="">My Account</a></li>
@@ -276,4 +271,128 @@ include "ControllerNotifications.php";
       </section>
     </div>
   </div>
+
+  <script type="application/javascript">
+
+    var data="";
+
+    function seenMessage(id){
+        
+        var xhr = new XMLHttpRequest();
+        // xhr.setRequestHeader('Content-type','application/json; charset=utf-8');
+        xhr.onload = function () {
+            
+            if ( xhr.status == "200") {
+                // var users = JSON.parse(xhr.responseText);
+                console.table("Seen message!");
+                window.location.href = "#";
+                location.reload();
+            } else {
+               return;
+            }
+        }
+        xhr.open("PUT", "GetMessages.php?id="+id, true);
+        xhr.send();
+        console.log(id);
+        
+    }
+
+    window.setInterval(function(){ xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            if(data===this.responseText)
+                return ;
+            data=this.responseText;    
+            var json=JSON.parse(this.responseText);
+            var count = Object.keys(json).length;
+            var i = 0;
+            
+            while(i < count){
+                
+                var node = document.createElement("P");
+                var mesaj = document.createTextNode(json[i].message);
+                node.appendChild(mesaj);
+                var node12 = document.createElement("form");
+                var att = document.createAttribute("method"); att.value = "POST"; node12.setAttributeNode(att);
+                var att1 = document.createAttribute("action"); att1.value = "messageView.php"; node12.setAttributeNode(att1);
+                var node11 = document.createElement("INPUT");
+                var att = document.createAttribute("value"); att.value = json[i].childId; node11.setAttributeNode(att);
+                var att1 = document.createAttribute("type"); att1.value = "hidden"; node11.setAttributeNode(att1);
+                var att2 = document.createAttribute("name"); att2.value = "friendId"; node11.setAttributeNode(att2);
+                node12.appendChild(node11);
+                var node14 = document.createElement("INPUT");
+                var att = document.createAttribute("value"); att.value = <?php echo $_SESSION['childId']?>; node14.setAttributeNode(att);
+                var att1 = document.createAttribute("type"); att1.value = "hidden"; node14.setAttributeNode(att1);
+                var att2 = document.createAttribute("name"); att2.value = "childId"; node14.setAttributeNode(att2);
+                node12.appendChild(node14);
+                var node13 = document.createElement("INPUT");
+                var att = document.createAttribute("value"); att.value = "Replay"; node13.setAttributeNode(att);
+                var att1 = document.createAttribute("type"); att1.value = "submit"; node13.setAttributeNode(att1);
+                var att2 = document.createAttribute("class"); att2.value = "buttonReplay"; node13.setAttributeNode(att2);
+                node12.appendChild(node13);
+                var node1 = document.createElement("FORM"); 
+                var att = document.createAttribute("id"); att.value = "message_modal"; node1.setAttributeNode(att);
+                var att1 = document.createAttribute("action"); att1.value = "messageController.php"; node1.setAttributeNode(att1);
+                var att2 = document.createAttribute("method"); att2.value = "POST"; node1.setAttributeNode(att2);
+                node1.appendChild(node); node1.appendChild(node12);
+                var node2 = document.createElement("P"); 
+                var att = document.createAttribute("class"); att.value = "modal__text"; node2.setAttributeNode(att);
+                node2.appendChild(node1);
+                var node3 = document.createElement("DIV"); 
+                var att = document.createAttribute("class"); att.value = "modal__body"; node3.setAttributeNode(att);
+                node3.appendChild(node2);
+                var node4 = document.createElement("H2"); 
+                var att = document.createAttribute("class"); att.value = "modal__title"; node4.setAttributeNode(att);
+                var titlu = document.createTextNode(json[i].name+" a timis un mesaj la "+json[i].date);
+                node4.appendChild(titlu);
+                var node5 = document.createElement("A"); 
+                var att = document.createAttribute("class"); att.value = "modal__close"; node5.setAttributeNode(att);
+                var att1 = document.createAttribute("href"); att1.value = "javascript:seenMessage("+json[i].messageId+")"; node5.setAttributeNode(att1);
+                var att10 = document.createAttribute("id"); att10.value = "closeModal"+i; node5.setAttributeNode(att10);
+                var close = document.createTextNode("X");
+                node5.appendChild(close);
+                var node6 = document.createElement("HEADER"); 
+                var att = document.createAttribute("class"); att.value = "modal__header"; node6.setAttributeNode(att);
+                node6.appendChild(node4); node6.appendChild(node5);
+                var node7 = document.createElement("FOOTER"); 
+                var att = document.createAttribute("class"); att.value = "modal__footer"; node7.setAttributeNode(att);
+                var node8 = document.createElement("SECTION"); 
+                var att = document.createAttribute("class"); att.value = "modal__content"; node8.setAttributeNode(att);
+                node8.appendChild(node6); node8.appendChild(node3); node8.appendChild(node7);
+                var node9 = document.createElement("DIV"); 
+                var att = document.createAttribute("class"); att.value = "modal__dialog"; node9.setAttributeNode(att);
+                node9.appendChild(node8);
+                var node10 = document.createElement("DIV"); 
+                var att = document.createAttribute("class"); att.value = "modal4"; node10.setAttributeNode(att);
+                var att1 = document.createAttribute("id"); att1.value = "modal"+i; node10.setAttributeNode(att1);
+                node10.appendChild(node9);
+
+                document.body.appendChild(node10); 
+                
+
+                var id = json[i].sendBy;
+                var node1 = document.createElement("LI");
+                var node2 = document.createElement("a");
+                var att = document.createAttribute("class");
+                att.value = "modal-trigger"; 
+                node2.setAttributeNode(att); 
+                var att1 = document.createAttribute("href");
+                att1.value = "#modal"+i;
+                node2.setAttributeNode(att1);
+                var textNode = document.createTextNode("New message from "+json[i].name);
+                node2.appendChild(textNode);
+                node1.appendChild(node2);
+                document.getElementById("notification").appendChild(node1);
+                
+
+                i++;
+            }
+            console.log("new message!");
+            
+                }
+     };
+    xmlhttp.open("GET", "GetMessages.php", true);
+    xmlhttp.send();},1000)
+    
+</script>
 </body>

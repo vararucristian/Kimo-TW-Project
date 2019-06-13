@@ -1,3 +1,4 @@
+
 .act{
     background-color: #336699ad;
     display: grid;
@@ -142,7 +143,7 @@ form{
     
 
 }
-.modal__body{
+.modal .modal__body{
     margin: 10%;
     padding-bottom:10%;
 }

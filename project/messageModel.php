@@ -60,7 +60,7 @@ class messageModel{
         return $name;
     }
 
-    public function addMessage($message, $id_sendBy, $id_sendTo){
+    public function addMessage($message, $id_sendBy, $id_sendTo, $childId){
         $sql="insert into messages(message,date) values(?,?);";
         $rezultat = $this->connection->prepare($sql);
         $data = date("Y-m-d h:i A");
@@ -77,9 +77,9 @@ class messageModel{
         $rezultat->close();
         $id_message=$rez['id'];
 
-        $sql="insert into account_messages values(?,?,?);";
+        $sql="insert into account_messages values(?,?,?,?);";
         $rezultat = $this->connection->prepare($sql);
-        $rezultat->bind_param('iii',$id_message, $id_sendBy, $id_sendTo);
+        $rezultat->bind_param('iiii',$id_message, $id_sendBy, $id_sendTo, $childId);
         $rezultat->execute();
         $rezultat->close();
     }
