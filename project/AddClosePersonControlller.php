@@ -30,11 +30,11 @@ class AddClosePerson{
 $closePerson=new AddClosePerson();
 if ($closePerson->checkData==false)
         {   
-            header("location:index_kidController.php?check=false#modal");
+            header("location:index_kidView.php?check=false#modal");
         }
 session_start();  
 $closePerson->addPerson();
-header("location:index_kidController.php");
+header("location:index_kidView.php");
 
 
 

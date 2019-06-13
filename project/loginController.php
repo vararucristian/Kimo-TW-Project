@@ -11,7 +11,7 @@ if(isset($_POST['login'])){
         $id=getID($user);
         if($user !== NULL){
             genToken($id);     
-            header('Location: homeController.php');
+            header('Location: index.php');
             
             $_SESSION['sessionID'] = getID($user);
         }
@@ -23,6 +23,6 @@ if(isset($_POST['login'])){
 
 
 
-include 'index_login.php';
+
 ?>
 

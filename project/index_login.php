@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+include 'loginController.php';
+?>
 <html lang="en">
 <head>
     <link rel="shortcut icon" type="image/x-icon" href="images/images.png">
@@ -35,7 +38,7 @@
                 ?>
             <p id="SignUp">
                     Don't have an account?
-                    <a href="controllerSignUp.php" target="_blank">Sign Up!</a>
+                    <a href="SignUp.php" target="_blank">Sign Up!</a>
              </p>
         </div>
     </main>

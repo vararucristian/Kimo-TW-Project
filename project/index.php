@@ -1,5 +1,6 @@
 <?php
 include "ControllerNotifications.php";
+include "homeController.php"; 
 ?>
 <!DOCTYPE html>
 <html>
@@ -57,7 +58,7 @@ include "ControllerNotifications.php";
                     <li>Notification 5</li>
                 </ul>
             </li>
-            <li><a href="profileController.php">My Account</a></li>
+            <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
         <nav>
@@ -75,7 +76,7 @@ include "ControllerNotifications.php";
                                 <li>Notification 5</li>
                             </ul>
                         </li>
-                        <li><a href="profileController.php">My Account</a></li>
+                        <li><a href="index_profile.php">My Account</a></li>
                         <li><form method="POST" action="logout.php"><input type="submit" name="logout" value="Log Out" ></form></li>
                     </ul>
                 </li>
@@ -90,7 +91,7 @@ include "ControllerNotifications.php";
             <?php
                 foreach ($homeController->childs as $child)
                   {
-                      echo "<form method=\"POST\" action=\"index_kidController.php\"><img src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
+                      echo "<form method=\"POST\" action=\"index_kidView.php\"><img src=\"".$child->picture."\" alt=\"kid\"><input class=\"button\" type=\"submit\" value =".$child->first_name."&nbsp;&nbsp;".$child->last_name.">";
                       echo "<input type=\"hidden\" name=\"childId\" value=\"".$child->getID()."\" /></form>";
 
             }
@@ -127,7 +128,7 @@ include "ControllerNotifications.php";
                 <header class="modal__header">
                     <h2 class="modal__title">Add kid</h2>
                     <a href="#" onclick="document.getElementById('form2').submit();"class="modal__save" >Add</a>
-                    <a href="homeController.php" class="modal__close" >X</a>
+                    <a href="index.php" class="modal__close" >X</a>
                 </header>
                 <div class="modal__body">
                     <p class="modal__text">
