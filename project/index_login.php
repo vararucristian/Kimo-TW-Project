@@ -20,7 +20,7 @@ include 'loginController.php';
             <b>Hey, parent! Let's see where your child is!</b>
         </div>
         <div id = "Login">
-            <form action="loginController.php" method="POST">
+            <form action="index_login.php" method="POST">
                 <div class="loginBox">
                     <img src="images/index.png" alt="user" >
                     <input type="text" placeholder="Your username" name="username" required>

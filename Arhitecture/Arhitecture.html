@@ -52,7 +52,7 @@
             <BR>Se vor realiza interogări ale bazei de date pentru logare, trimitere de mesaje, etc. Tot prin
             intermediul ei
             se vor realiza și modificările cum ar fi modificarea datelor personale ale contului, schimbarea fotografiei
-            unui copil, adăugarea unui nou copil etc. Notificările și mesajele vor fi și ele stocate în baza de date de
+            unui copil, adăugarea unui nou copil etc. Mesajele vor fi și ele stocate în baza de date de
             unde vor fi trimise către utilizator. Atunci când un nou cont teste creat cu success el va fi adăugat în
             baza de date.
         </P>
@@ -88,7 +88,7 @@
             monitorizeze
             prin
             intermediul
-            aplicației. La adăugare se vor folosi doar numele și prenumele copilului, eventual o poză de profil și
+            aplicației. La adăugare se vor folosi doar numele și prenumele copilului, genul și
             codul senzorului ce va transmite locația lui în timp real.
             <br><b>3.5 Vizualizare informații copil:</b><br> Aplicația va furniza o pagină de profil a fiecărui copil
             supravegheat
@@ -109,10 +109,9 @@
             aceștia
             vor fi adăugați automat în lista de prieteni a acestuia, listă ce se va găsi deasemenea pe pagina de
             destinată lui.
-            <br><b>3.10 Schimbă fotografia copilului:</b><br> Imaginea de profil poate fi adăugată la înregistrarea
-            copiilor
-            sau
-            oricând altcândva. Există posibilitatea de schimbare sau înlăturare a acesteia.
+            <br><b>3.10 Schimbă fotografia copilului:</b><br> Implicit fiecărui copil îi va fi asociată o imagine default
+             în funcție de gen. Dacă părintele dorește, există posibilitetea de a adăuga o fotografie cu propriul copil.
+             Ulterior acesta poate fi schimbată.
             <br><b>3.11 Vizualizare profil prieten al copilului:</b><br> Profilul unui prieten constă în poza de profil
             a
             cestuia
@@ -130,12 +129,12 @@
             datelor personale introduse la crearea contului.
             <br><b>3.15 Vizualizare notificări pentru situații de urgență:</b><br> În cazul în care copilul se află
             într-o
-            împrejurare periculoasă(s-a distanțat prea mult de persoanele de interes, sunt animale periculoase sau
+            împrejurare periculoasă (s-a distanțat prea mult de persoanele de interes, sunt animale periculoase sau
             un accident în apropiere, s-a lovit sau interacționează cu o persoană necunoscută) se vor emite
-            notificări specific către contul părintelui.
-            <br><b>3.16 Vizualizare notificări de mesaje:</b><br> Mesajele vor fi primite ca și notificări și vor apărea
-            alături
-            de cele menționate mai sus.
+            notificări specifice către contul părintelui.
+            <br><b>3.16 Vizualizare notificări de mesaje:</b><br> Mesajele vor fi primite ca in categoria Messages sub o 
+            formă sumară (doar numele celui ce a trimis mesajul), având și posibilitatea de a vedea efectiv și conținutul mesajului 
+            împreună cu celelelte date într-o feresatră. 
             <br><b>3.17 Răspunde la mesaj:</b><br> Alături de vizualizarea unui mesaj există și opțiunea de răspundere,
             selectarea
             acesteia direcționând utilizatorul către pagina de profil a prietenului a cărui părinte a trimis acel
@@ -160,7 +159,7 @@
 
         <b>5.1 Server:</b>
         <ul>
-            <li> Limbaj de Programare: PHP</li>
+            <li> Limbaj de Programare: PHP, JavaScript</li>
             <li> Server Web: Apache</li>
             <li> Server Bază de date: MySql</li>
         </ul>
@@ -180,9 +179,9 @@
             <h6>Picture 3 Diagrama de containere</h6>
         </div>
         <p>Construcția aplicației se bazează pe modelul arhitectural MVC.
-            View-urile sunt reprezentate prin paginile HTML+CSS, fiecăruia corespunzându-i mai multe controlere.
+            View-urile sunt reprezentate prin paginile HTML+CSS, fiecăreia corespunzându-i mai multe controlere.
             Controlerele fac legătură între vizualizare și funcționalitățile aplicației descrise mai sus sau acțiunile
-            derulate automat la nivelul serverului prin interpretarea datelor primite de la senzor.
+            derulate automat la nivelul serverului prin interpretarea datelor primite de la senzor. 
         </p>
         <div style="text-align:center;"><img src="1.png" style="width: 100%;" alt="container-diagram">
             <h6>Picture 4 Diagrama MVC</h6>
@@ -197,8 +196,11 @@
     <section id="C8">
         <h4> 8. Surse de date externe</h4>
         <p> <b>Sensor Kid:</b>
-            <p>Datele vor fi preluate dintr-un formular web si for fi transmise prin POST la un REST API unde vor vi stocate intr-o bază de date locală.
+            <p>Datele vor fi preluate dintr-un formular web si for fi transmise prin PUT la un REST API unde vor vi stocate intr-o bază de date locală.
                 Un client, în cazul de față aplicația "KIMO", va putea afla anumite date specifice senzorului (poziție, stare) apelând acest serviciu prin metoda GET.
+                De fiecare dată când un nou copil e adăugat în aplicație se trimite prin metoda POST
+                 o cerere de înregistrare a copilului în baza de 
+                date a senzorului având inițial locația părintelui și stare obișnuită.
             </p>
             <b>Google Map API:</b>
             <p>Pentru afișarea hărții împreună cu locația actuală a copilului se va realiza

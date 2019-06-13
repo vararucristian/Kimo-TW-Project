@@ -53,6 +53,7 @@ include "ControllerNotifications.php";
                     
                 </ul>
             </li>
+            </li>
             <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>
         </ul>
