@@ -224,7 +224,7 @@
                 <input type="text" name="fname" placeholder="FirstName">
                 Lastname
                 <input type="text" name="lname" placeholder="LastName">
-                <img src="images/descărcare(2).png" alt="location">
+                <img src="images/descărcare(2).png" alt="location" width=5%>
                 Latitude:
                 <input type="text" name="latitude" placeholder="45.943161">
                 Longitude:
