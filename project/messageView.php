@@ -1,10 +1,11 @@
 <?php
+include "messageController.php";
 include "kidController.php";
 include "ControllerNotifications.php";
 ?>
 <!DOCTYPE html>
 <?php
-include "messageController.php";
+
 ?>
 <html lang="en">
 
@@ -150,13 +151,6 @@ include "messageController.php";
     </div>
   </div>
 
-// $message = json_decode(newMessages($_SESSION['sessionID']));
-
-// foreach($message as $msg){
-//     echo $msg -> message . " " . $msg->sendBy;
-// }
-
-?>
 
 
 
