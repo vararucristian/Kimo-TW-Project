@@ -2,7 +2,9 @@
 
 include "messageModel.php";
 include "checkSession.php";
-
+session_start();
+$_SESSION['friendId'] = $_POST['friendId'];
+$_SESSION['childId'] = $_POST['childId'];
 class messageController{
 
     private $friendID;
@@ -10,10 +12,10 @@ class messageController{
     private $model;
     
     public function __construct(){
-        session_start();
+        
         checkToken();
         $this->idAccount = $_SESSION['sessionID'];
-        $this->friendID = $_POST['friendId'];
+        $this->friendID = $_SESSION['friendId'];
         $this->model = new messageModel();
         if(isset($_POST['Send'])){
             $this->model->addMessage($_POST['msg'], $this->idAccount, $this->getParentID($this->friendID));
@@ -39,6 +41,10 @@ class messageController{
 
     public function getParentID($friendID){
         return $this->model->getParentID($friendID);
+    }
+
+    public function getMyFirstName($id){
+        return $this->model->getMyFirstNam($id);
     }
 }
 

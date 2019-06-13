@@ -50,6 +50,16 @@ class messageModel{
         return $name;
     }
 
+    public function getMyFirstName($id){
+        $sql = "select fname from accounts where id=?";
+        $stmt=$this->connection->prepare($sql);
+        $stmt->bind_param("i",$id);
+        $stmt->execute();
+        $stmt->bind_result($name);
+        $stmt->fetch();    
+        return $name;
+    }
+
     public function addMessage($message, $id_sendBy, $id_sendTo){
         $sql="insert into messages(message,date) values(?,?);";
         $rezultat = $this->connection->prepare($sql);
@@ -73,6 +83,7 @@ class messageModel{
         $rezultat->execute();
         $rezultat->close();
     }
+
 }
 
 ?>

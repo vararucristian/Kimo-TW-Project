@@ -122,7 +122,8 @@
             <?php
               foreach ($friendsController->friends as $friend){
                   echo "<form method=\"POST\" action=\"messageController.php\"><input class=\"button\" name=\"choose\" type=\"submit\" value =".$friend->first_name."&nbsp;&nbsp;".$friend->last_name.">";
-                  echo "<input type=\"hidden\" name=\"friendId\" value=\"".$friend->getID()."\" /></form>";
+                  echo "<input type=\"hidden\" name=\"friendId\" value=\"".$friend->getID()."\" />";
+                  echo "<input type=\"hidden\" name=\"childId\" value=\"".$id."\" /></form>";
                   // $_SESSION['friendID'] = $friend->getID();
               }
             ?>         
