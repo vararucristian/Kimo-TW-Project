@@ -1,6 +1,6 @@
 <?php
-include "ControllerNotifications.php";
 include "homeController.php"; 
+include "ControllerNotifications.php";
 ?>
 <!DOCTYPE html>
 <html>

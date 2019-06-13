@@ -1,10 +1,10 @@
-<?php
-include "ControllerNotifications.php";
-?>
+
 <!DOCTYPE html>
 <?php
 
 include "index_kidController.php";
+
+include "ControllerNotifications.php";
 ?>
 <html>
 
