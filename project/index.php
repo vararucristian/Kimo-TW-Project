@@ -48,15 +48,11 @@ include "ControllerNotifications.php";
             <li><img src="images/images.png" alt="logo"></li>
             <li class="KIMO">KIMO APP</li>
             <li><a href="#">Home</a></li>
-            <li><a href="#">Notifications</a>
-                <ul>
-                    <li id="notification">Anaaaaa</li>
-                    <li>Notification 1</li>
-                    <li>Notification 2</li>
-                    <li>Notification 3</li>
-                    <li>Notification 4</li>
-                    <li>Notification 5</li>
+            <li><a href="#">Messages</a>
+                <ul id="notification">
+                   
                 </ul>
+            </li>
             </li>
             <li><a href="index_profile.php">My Account</a></li>
             <li><form method="POST" action="logout.php"><input  class="button" type="submit" name="logout" value="Log Out" ></form></li>

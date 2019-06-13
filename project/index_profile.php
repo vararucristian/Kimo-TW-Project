@@ -74,14 +74,11 @@ include "ControllerNotifications.php";
       <li><img src="images/images.png" alt="logo"></li>
       <li class="KIMO">KIMO APP</li>
       <li><a href="index.php">Home</a></li>
-      <li><a href="#">Notifications</a>
-        <ul>
-          <li><a href="#modal3" class="modal-trigger" >Notification 1</a></li>
-          <li>Notification 2</li>
-          <li>Notification 3</li>
-          <li>Notification 4</li>
-          <li>Notification 5</li>
-        </ul>
+      <li><a href="#">Messages</a>
+                <ul id="notification">
+                   
+                </ul>
+            </li>
       </li>
       <li><a href="">My Account</a></li>
       <li><form method="POST" action="logout.php"><input  class="button1" type="submit" name="logout" value="Log Out" ></form></li>
