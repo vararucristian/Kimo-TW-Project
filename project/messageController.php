@@ -2,7 +2,6 @@
 
 include "messageModel.php";
 include "checkSession.php";
-session_start();
 
 // $_SESSION['childId'] = $_POST['childId'];
 class messageController{
@@ -15,7 +14,7 @@ class messageController{
         
         checkToken();
         $this->idAccount = $_SESSION['sessionID'];
-        $this->friendID = $_SESSION['friendId'];
+        $this->friendID = $_SESSION["friendId"];
         $this->childId = $_SESSION['childId'];
         $this->model = new messageModel();
 

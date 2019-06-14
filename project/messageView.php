@@ -1,10 +1,11 @@
 <?php
+session_start();
+$_SESSION["friendId"] = $_POST["friendId"];
+$_SESSION['childId'] = $_POST['childId'];
+
 include "messageController.php";
 include "kidController.php";
 include "ControllerNotifications.php";
-
-$_SESSION['friendId'] = $_POST['friendId'];
-$_SESSION['childId'] = $_POST['childId'];
 ?>
 <!DOCTYPE html>
 <?php
